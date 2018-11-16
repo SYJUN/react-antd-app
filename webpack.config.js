@@ -1,8 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 const wc = require('webpack-config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const themeConf = require('./webpack.theme.config');
 
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -21,6 +21,12 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
+    alias: {
+      '@core': path.resolve(__dirname, 'core'),
+    },
+  },
+  externals: {
+    lodash: '_',
   },
   module: {
     rules: [
@@ -40,15 +46,28 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
           'sass-loader',
         ],
       },
+      {
+        test: /\.less$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true,
+              modifyVars: themeConf(),
+              javascriptEnabled: true,
+            },
+          }
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // favicon: serverConfig.favicon,
       template: path.resolve('./src/index.html'),
       filename: 'index.html',
       inject: 'body',
-      // ENV: serverConfig,
     }),
   ],
 });

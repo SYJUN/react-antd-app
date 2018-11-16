@@ -7,6 +7,10 @@ class WebpackStart {
   }
 
   run() {
+    this.start();
+  }
+  
+  start() {
     spawn('webpack-dev-server', ['--progress', '--compress'], { stdio: 'inherit' });
   }
 }

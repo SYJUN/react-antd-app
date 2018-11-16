@@ -1,10 +1,16 @@
 {
-  "presets": ["env", "react"],
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["> 5% in CN", "last 2 versions", "not dead", "not ie <= 9"]
+      }
+    }],
+    "@babel/preset-react"
+  ],
   "plugins": [
-    "transform-react-jsx",
-    "transform-object-rest-spread",
-    "transform-object-assign",
-    "transform-export-extensions",
+    ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style": true }],
+    "syntax-dynamic-import",
     "react-hot-loader/babel"
   ]
 }
