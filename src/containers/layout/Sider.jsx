@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../../components/layout';
+import ErrorWrapper from '../../components/feedback';
 
 import { Menu, Icon } from 'antd';
 
@@ -56,4 +57,10 @@ class Sider extends PureComponent {
   }
 }
 
-export default Sider;
+Sider.propTypes = {};
+
+function ErrorWrapper({ ...props }) {
+  return (<ErrorWrapper><Sider {...props} /></ErrorWrapper>);
+}
+
+export default ErrorWrapper;

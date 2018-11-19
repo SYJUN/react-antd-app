@@ -14,9 +14,9 @@ class LayoutPage extends React.Component {
       <Layout>
         <Sider />
         <Layout style={{ marginLeft: 200 }}>
-          <Layout.Header style={{ background: '#000', padding: 0 }} />
+          <Layout.Header style={{ position: 'fixed', zIndex: 1, width: '100%', background: '#000', padding: 0 }} />
 
-          <Layout.Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+          <Layout.Content style={{ margin: '70px 16px 0', overflow: 'initial' }}>
             <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
               {this.props.routes}
             </div>

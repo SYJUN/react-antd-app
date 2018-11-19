@@ -4,20 +4,20 @@ import styled from 'styled-components';
 import { Spin } from 'antd';
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 `;
 
-function Spin(props) {
+function Spin({ style, className, ...props }) {
   return (
-    <Wrapper>
-      <Spin {...props} />
-    </Wrapper> 
+    <Wrapper style={style} className={className}>
+      <AntdSpin {...props} />
+    </Wrapper>
   );
 }
 
-Spin.propTypes = {};
+Spin.propTypes = {
+  style: PropTypes.object,
+  className: PropTypes.string,
+};
 
 export default Spin;
