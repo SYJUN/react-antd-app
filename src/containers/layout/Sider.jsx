@@ -1,9 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../../components/layout';
-import ErrorWrapper from '../../components/feedback';
+import { Layout } from 'antd';
+import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 
 import { Menu, Icon } from 'antd';
+
+const layoutSiderStyle = {
+  overflow: 'auto',
+  height: '100vh',
+  position: 'fixed',
+  left: 0,
+  top: '64px',
+  background: '#232A32',
+};
+
+const menuStyle = {
+  backgroundColor: '#232a32',
+  color: '#999',
+};
 
 class Sider extends PureComponent {
   constructor(props) {
@@ -12,46 +26,41 @@ class Sider extends PureComponent {
     this.state = {};
   }
 
+  handleMenuSelect = (opts) => {
+    console.log(opts)
+  };
+
   render() {
     const { children } = this.props;
 
+    const navList = [
+      { id: 1, label: 'nav 1', name: 'nav_1', icon_type: 'user' },
+      { id: 2, label: 'nav 2', name: 'nav_2', icon_type: 'video-camera' },
+      { id: 3, label: 'nav 3', name: 'nav_3', icon_type: 'upload' },
+      { id: 4, label: 'nav 4', name: 'nav_4', icon_type: 'bar-chart' },
+      { id: 5, label: 'nav 5', name: 'nav_5', icon_type: 'cloud-o' },
+      { id: 6, label: 'nav 6', name: 'nav_6', icon_type: 'appstore-o' },
+      { id: 7, label: 'nav 7', name: 'nav_7', icon_type: 'team' },
+      { id: 8, label: 'nav 8', name: 'nav_8', icon_type: 'shop' },
+    ];
+
     return (
-      <Layout.Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
-        <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span className="nav-text">nav 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span className="nav-text">nav 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span className="nav-text">nav 3</span>
-            </Menu.Item>
-            <Menu.Item key="4">
-              <Icon type="bar-chart" />
-              <span className="nav-text">nav 4</span>
-            </Menu.Item>
-            <Menu.Item key="5">
-              <Icon type="cloud-o" />
-              <span className="nav-text">nav 5</span>
-            </Menu.Item>
-            <Menu.Item key="6">
-              <Icon type="appstore-o" />
-              <span className="nav-text">nav 6</span>
-            </Menu.Item>
-            <Menu.Item key="7">
-              <Icon type="team" />
-              <span className="nav-text">nav 7</span>
-            </Menu.Item>
-            <Menu.Item key="8">
-              <Icon type="shop" />
-              <span className="nav-text">nav 8</span>
-            </Menu.Item>
-          </Menu>
+      <Layout.Sider style={layoutSiderStyle}>
+        <Menu 
+        style={menuStyle} 
+        mode="inline" 
+        defaultSelectedKeys={['4']}
+        onSelect={this.handleMenuSelect}
+        >
+          {navList.map(item => {
+            return (
+              <Menu.Item key={item.id}>
+                <Icon type={item.icon_type} />
+                <span className="nav-text">{item.label}</span>
+              </Menu.Item>
+            );
+          })}
+        </Menu>
       </Layout.Sider>
     );
   }
@@ -59,8 +68,8 @@ class Sider extends PureComponent {
 
 Sider.propTypes = {};
 
-function ErrorWrapper({ ...props }) {
-  return (<ErrorWrapper><Sider {...props} /></ErrorWrapper>);
+function ErrorWrapper(props) {
+  return (<ErrorBoundary><Sider {...props} /></ErrorBoundary>);
 }
 
 export default ErrorWrapper;

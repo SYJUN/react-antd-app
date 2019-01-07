@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../../components/layout';
+import { Layout } from 'antd';
 
 function Footer({ content }) {
   const text = content || 'Ant Design ©2018 Created by Ant UED';

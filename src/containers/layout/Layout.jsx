@@ -1,10 +1,38 @@
-import React from 'react';
-import Layout from '../../components/layout';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import { Layout } from 'antd';
 
-import Sider from './Sider';
-import Footer from './Footer';
+import SiderContainer from './Sider';
+import FooterContainer from './Footer';
 
-class LayoutPage extends React.Component {
+const layoutHeaderStyle = {
+  position: 'fixed', 
+  zIndex: 1, 
+  width: '100%', 
+  background: '#26344b', 
+  padding: 0,
+};
+
+const layoutContentStyle = {
+  margin: '70px 16px 0', 
+  overflow: 'initial',
+};
+
+const Logo = styled.div`
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);  
+  margin: 16px 28px 16px;
+  float: left;
+`;
+
+const RouteStyled = styled.div`
+  padding: 24px;
+  background: #fff;
+  text-align: center;
+`;
+
+class LayoutPage extends PureComponent {
   constructor(props) {
     super(props);
   }
@@ -12,17 +40,15 @@ class LayoutPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Sider />
-        <Layout style={{ marginLeft: 200 }}>
-          <Layout.Header style={{ position: 'fixed', zIndex: 1, width: '100%', background: '#000', padding: 0 }} />
-
-          <Layout.Content style={{ margin: '70px 16px 0', overflow: 'initial' }}>
-            <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
-              {this.props.routes}
-            </div>
+        <SiderContainer />
+        <Layout>
+          <Layout.Header style={layoutHeaderStyle}>
+            <Logo className="logo" />
+          </Layout.Header>
+          <Layout.Content style={layoutContentStyle}>
+            <RouteStyled>{this.props.routes}</RouteStyled>
           </Layout.Content>
-
-          <Footer />
+          <FooterContainer />
         </Layout>
       </Layout>
     );
