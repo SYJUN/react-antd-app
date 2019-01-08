@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const Loading = () => <Wrapper><Spinner size="48px" /></Wrapper>;
+const Loading = () => (<Wrapper><Spinner size="48px" /></Wrapper>);
 
 export default function asyncComp(loader) {
   return Loadable({ loader, loading: Loading });
