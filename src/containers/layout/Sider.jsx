@@ -1,72 +1,102 @@
 import React, { PureComponent } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Layout } from 'antd';
+import { Scrollbars } from 'react-custom-scrollbars';
+import styled from 'styled-components';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
+import navList from './sider-nav-list';
 
-import { Menu, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 
-const layoutSiderStyle = {
-  overflow: 'auto',
-  height: '100vh',
-  position: 'fixed',
-  left: 0,
-  top: '64px',
-  background: '#232A32',
-};
+const SiderContainer = styled(Layout.Sider)`
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+`;
 
-const menuStyle = {
-  backgroundColor: '#232a32',
-  color: '#999',
-};
+const Logo = styled.div`
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);  
+  margin: 16px 28px 16px;
+  float: left;
+`;
 
 class Sider extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  handleMenuSelect = (opts) => {
-    console.log(opts)
+  state = {
+    collapsed: false,
   };
 
   render() {
-    const { children } = this.props;
-
-    const navList = [
-      { id: 1, label: 'nav 1', name: 'nav_1', icon_type: 'user' },
-      { id: 2, label: 'nav 2', name: 'nav_2', icon_type: 'video-camera' },
-      { id: 3, label: 'nav 3', name: 'nav_3', icon_type: 'upload' },
-      { id: 4, label: 'nav 4', name: 'nav_4', icon_type: 'bar-chart' },
-      { id: 5, label: 'nav 5', name: 'nav_5', icon_type: 'cloud-o' },
-      { id: 6, label: 'nav 6', name: 'nav_6', icon_type: 'appstore-o' },
-      { id: 7, label: 'nav 7', name: 'nav_7', icon_type: 'team' },
-      { id: 8, label: 'nav 8', name: 'nav_8', icon_type: 'shop' },
-    ];
+    const { collapsed } = this.props;
 
     return (
-      <Layout.Sider style={layoutSiderStyle}>
-        <Menu 
-        style={menuStyle} 
-        mode="inline" 
-        defaultSelectedKeys={['4']}
-        onSelect={this.handleMenuSelect}
+      <SiderContainer 
+        theme="dark"
+        trigger={null}
+        width={200}
+        collapsible
+        collapsedWidth={80}
+        collapsed={collapsed}
+      >
+        <Logo className="logo" />
+        <Scrollbars 
+          autoHide
+          autoHideTimeout={1000}
+          autoHideDuration={200}
+          autoHeight
+          autoHeightMin={0}
+          autoHeightMax="100vh"
+          thumbMinSize={30}
         >
-          {navList.map(item => {
-            return (
-              <Menu.Item key={item.id}>
-                <Icon type={item.icon_type} />
-                <span className="nav-text">{item.label}</span>
-              </Menu.Item>
-            );
-          })}
-        </Menu>
-      </Layout.Sider>
+          <Menu
+            mode="inline" 
+            theme="dark"
+            inlineCollapsed={collapsed}
+            defaultSelectedKeys={['0-0']}
+          >
+            {navList.map((item, navIdx) => {
+              if (item.sub_menus) {
+                return (
+                  <Menu.SubMenu
+                    key={`0-${navIdx}`}
+                    title={<span><Icon type={item.icon_type} /><span>{item.label}</span></span>}
+                  >
+                    {item.sub_menus.map((sub, subIdx) => {
+                      return (
+                        <Menu.Item key={`0-${navIdx}-${subIdx}`}>
+                          <NavLink to={sub.path}>
+                            <Icon type={sub.icon_type} />
+                            <span className="nav-text">{sub.label}</span>
+                          </NavLink>
+                        </Menu.Item>
+                      );
+                    })}
+                  </Menu.SubMenu>
+                );
+              }
+              return (
+                <Menu.Item key={`0-${navIdx}`}>
+                  <NavLink to={item.path}>
+                    <Icon type={item.icon_type} />
+                    <span className="nav-text">{item.label}</span>
+                  </NavLink>
+                </Menu.Item>
+              );
+            })}
+          </Menu>
+        </Scrollbars>
+      </SiderContainer>
     );
   }
 }
 
-Sider.propTypes = {};
+Sider.propTypes = {
+  collapsed: PropTypes.bool.isRequired,
+};
 
 function ErrorWrapper(props) {
   return (<ErrorBoundary><Sider {...props} /></ErrorBoundary>);
