@@ -46,9 +46,8 @@ const TriggerIcon = styled(Icon)`
 `;
 
 const RouteStyled = styled.div`
-  padding: 24px;
-  background: #fff;
-  text-align: center;
+  /* padding: 24px; */
+  /* background: #fff; */
 `;
 
 class LayoutPage extends PureComponent {
