@@ -6,9 +6,26 @@ import { clearfix } from '../../untils/style-consts';
 import { Card } from 'antd';
 import Group from './Group';
 
-const StyledContent = styled.div`
-  display: ${props => props.active ? 'block' : 'none'};
+const Content = styled.div`
+  position: relative;
+  width: 100%;
+  height: ${props => props.height}px;
   ${clearfix};
+`;
+
+const StyledContent = styled.div`
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  ${props => props.active ? `
+    z-index: 10;
+    opacity: 1;
+  `: `
+    z-index: 0;
+    opacity: 0;
+  `};
 `;
 
 class CardCarousel extends React.PureComponent {
@@ -32,7 +49,7 @@ class CardCarousel extends React.PureComponent {
   };
 
   render() {
-    const { children, cardTitle, bordered, hoverable, pageSize, trigger, style } = this.props;
+    const { children, cardTitle, bordered, hoverable, pageSize, trigger, height, isReconstruct } = this.props;
     const { activeIdx } = this.state;
     const splitData = CardCarousel.splitColl(children, pageSize);
     const total = Math.ceil(children.length / pageSize);
@@ -40,13 +57,17 @@ class CardCarousel extends React.PureComponent {
 
     return (
       <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
-        {splitData.map((item, idx) => {
-          return (
-            <StyledContent key={idx} active={activeIdx === idx} style={style}>
-              {item.map(o => o)}
-            </StyledContent>
-          );
-        })}
+        <Content height={height}>
+          {isReconstruct ? splitData[activeIdx].map(o => o) : (
+            splitData.map((item, idx) => {
+              return (
+                <StyledContent key={idx} active={activeIdx === idx}>
+                  {activeIdx === idx && item.map(o => o)}
+                </StyledContent>
+              );
+            })
+          )}
+        </Content>
       </Card>
     );
   }
@@ -61,14 +82,15 @@ CardCarousel.propTypes = {
   ]),
   bordered: PropTypes.bool,
   hoverable: PropTypes.bool,
-  style: PropTypes.object,
+  isReconstruct: PropTypes.bool,
+  height: PropTypes.number.isRequired,
 };
 
 CardCarousel.defaultProps = {
-  pageSize: 4,
+  pageSize: 1,
   bordered: true,
   hoverable: false,
-  style: {},
+  isReconstruct: false,
 };
 
 export default CardCarousel;

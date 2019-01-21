@@ -15,18 +15,20 @@ const Wrapper = styled(Layout)`
     width: 100%;
     padding-left: 80px;
     transition: all 0.3s;
+    overflow: hidden;
   }
 
   .no-collapsed-layout {
     width: 100%;
     padding-left: 200px;
     transition: all 0.3s;
+    overflow: hidden;
   }
 `;
 
 const Header = styled(Layout.Header)`
   position: fixed;
-  z-index: 1;
+  z-index: 99999;
   width: 100%;
   background: #fff;
   padding: 0;

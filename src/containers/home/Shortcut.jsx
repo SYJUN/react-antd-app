@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 import { Icon } from 'antd';
+import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import CardCarousel from '../../components/card-carousel';
 
 import { CardItem } from './styled';
@@ -20,7 +21,7 @@ const data = [
 
 function Shortcut(props) {
   return (
-    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" style={{ height: '204px'}}>
+    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" height={204}>
       {data.map((item, idx) => {
         return (
           <CardItem key={idx}>
@@ -39,4 +40,8 @@ Shortcut.propTypes = {
 
 };
 
-export default Shortcut;
+function ErrorWrapper(props) {
+  return (<ErrorBoundary><Shortcut {...props} /></ErrorBoundary>);
+}
+
+export default ErrorWrapper;

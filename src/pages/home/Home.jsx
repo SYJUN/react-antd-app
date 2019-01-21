@@ -6,8 +6,15 @@ import { Row, Col } from 'antd';
 import Shortcut from '../../containers/home/Shortcut';
 import Tasks from '../../containers/home/Tasks';
 
+import Dashboard from '../../containers/home/Dashboard';
+
 const Wrapper = styled.div`
   width: 100%;
+`;
+
+const SpaceDivide = styled.div`
+  height: 20px;
+  visibility: hidden;
 `;
 
 class Home extends React.PureComponent {
@@ -16,7 +23,7 @@ class Home extends React.PureComponent {
   render() {
     return (
       <Wrapper>
-        <Row gutter={16}>
+        <Row gutter={24}>
           <Col span={8}>
             <Shortcut />
           </Col>
@@ -25,6 +32,16 @@ class Home extends React.PureComponent {
           </Col>
           <Col span={8}>
             
+          </Col>
+        </Row>
+
+        <SpaceDivide />
+
+        <Row gutter={24}>
+          <Col span={16}>
+            <Dashboard />
+          </Col>
+          <Col span={8}>
           </Col>
         </Row>
       </Wrapper>
