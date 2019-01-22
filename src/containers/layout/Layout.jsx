@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Layout, Icon } from 'antd';
+import { Layout, Icon, BackTop } from 'antd';
 
 import SiderContainer from './Sider';
 import FooterContainer from './Footer';
@@ -78,6 +78,7 @@ class LayoutPage extends PureComponent {
           </Header>
           <Layout.Content style={layoutContentStyle}>
             <RouteStyled>{this.props.routes}</RouteStyled>
+            <BackTop visibilityHeight={200} />
           </Layout.Content>
           <FooterContainer />
         </Layout>
