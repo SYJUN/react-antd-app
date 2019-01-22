@@ -1,10 +1,38 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import CardCarousel from '../../components/card-carousel';
 
-import { StyledTaskItem } from './styled';
+const StyledTaskItem = styled.div`
+  width: 50%;
+  height: ${props => props.height / 2}px;
+  float: left;
+  padding: 10px;
+  color: #333;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #F8F8F8;
+    transition: all 0.3s;
+
+    &:hover {
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .total {
+    color: #459df5;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+  }
+`;
 
 const data = [
   { id: 1, label: '待审评论', value: 110 },
@@ -16,7 +44,7 @@ const data = [
 
 function Tasks(props) {
   return (
-    <CardCarousel trigger="hover" pageSize={4} cardTitle="快捷方式" height={204}>
+    <CardCarousel trigger="hover" pageSize={4} cardTitle="待办事项" height={204}>
       {data.map((item, idx) => {
         return (
           <StyledTaskItem key={idx} height={204}>

@@ -1,11 +1,38 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { Icon } from 'antd';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import CardCarousel from '../../components/card-carousel';
 
-import { CardItem } from './styled';
+const CardItem = styled.div`
+  width: 25%;
+  float: left;
+  cursor: pointer;
+
+  &:hover {
+    .media-heading {
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .media-heading {
+    background-color: #F8F8F8;
+    padding: 8px 0;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 30px;
+    transition: all 0.3s;
+  }
+
+  .media-body {
+    text-align: center;
+    color: #333;
+    padding: 10px 0;
+  }
+`;
 
 const data = [
   { id: 1, label: '主页1', name: 'page' },

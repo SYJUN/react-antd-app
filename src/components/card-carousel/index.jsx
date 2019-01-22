@@ -88,7 +88,7 @@ CardCarousel.propTypes = {
 
 CardCarousel.defaultProps = {
   pageSize: 1,
-  bordered: true,
+  bordered: false,
   hoverable: false,
   reconstruct: false,
 };
