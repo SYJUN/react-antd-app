@@ -5,6 +5,7 @@ import { Row, Col } from 'antd';
 
 import Shortcut from '../../containers/home/Shortcut';
 import Tasks from '../../containers/home/Tasks';
+import Versions from '../../containers/home/Versions';
 
 import Dashboard from '../../containers/home/Dashboard';
 
@@ -31,7 +32,7 @@ class Home extends React.PureComponent {
             <Tasks />
           </Col>
           <Col span={8}>
-            
+            <Versions />
           </Col>
         </Row>
 

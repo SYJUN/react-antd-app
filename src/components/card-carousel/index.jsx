@@ -49,7 +49,7 @@ class CardCarousel extends React.PureComponent {
   };
 
   render() {
-    const { children, cardTitle, bordered, hoverable, pageSize, trigger, height, isReconstruct } = this.props;
+    const { children, cardTitle, bordered, hoverable, pageSize, trigger, height, reconstruct } = this.props;
     const { activeIdx } = this.state;
     const splitData = CardCarousel.splitColl(children, pageSize);
     const total = Math.ceil(children.length / pageSize);
@@ -58,7 +58,7 @@ class CardCarousel extends React.PureComponent {
     return (
       <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
         <Content height={height}>
-          {isReconstruct ? splitData[activeIdx].map(o => o) : (
+          {reconstruct ? splitData[activeIdx].map(o => o) : (
             splitData.map((item, idx) => {
               return (
                 <StyledContent key={idx} active={activeIdx === idx}>
@@ -82,7 +82,7 @@ CardCarousel.propTypes = {
   ]),
   bordered: PropTypes.bool,
   hoverable: PropTypes.bool,
-  isReconstruct: PropTypes.bool,
+  reconstruct: PropTypes.bool,
   height: PropTypes.number.isRequired,
 };
 
@@ -90,7 +90,7 @@ CardCarousel.defaultProps = {
   pageSize: 1,
   bordered: true,
   hoverable: false,
-  isReconstruct: false,
+  reconstruct: false,
 };
 
 export default CardCarousel;

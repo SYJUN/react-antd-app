@@ -1,35 +1,30 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon } from 'antd';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import CardCarousel from '../../components/card-carousel';
 
-import { CardItem } from './styled';
+import { StyledTaskItem } from './styled';
 
 const data = [
-  { id: 1, label: '主页1', name: 'page' },
-  { id: 2, label: '主页2', name: 'page' },
-  { id: 3, label: '主页3', name: 'page' },
-  { id: 4, label: '主页4', name: 'page' },
-  { id: 5, label: '主页5', name: 'page' },
-  { id: 6, label: '主页6', name: 'page' },
-  { id: 7, label: '主页7', name: 'page' },
-  { id: 8, label: '主页8', name: 'page' },
-  { id: 9, label: '主页9', name: 'page' },
+  { id: 1, label: '待审评论', value: 110 },
+  { id: 2, label: '待审批帖子', value: 10 },
+  { id: 3, label: '待审商品', value: 55 },
+  { id: 4, label: '待发货', value: 76 },
+  { id: 5, label: '待审友情链接', value: 10 },
 ];
 
 function Tasks(props) {
   return (
-    <CardCarousel trigger="hover" pageSize={8} cardTitle="快捷方式" height={204}>
+    <CardCarousel trigger="hover" pageSize={4} cardTitle="快捷方式" height={204}>
       {data.map((item, idx) => {
         return (
-          <CardItem key={idx}>
-            <div className="media-heading">
-              <Icon type="home" />
+          <StyledTaskItem key={idx} height={204}>
+            <div className="content">
+              <span>{item.label}</span>
+              <div className="total">{item.value}</div>
             </div>
-            <div className="media-body">{item.label}</div>
-          </CardItem>
+          </StyledTaskItem>
         );
       })}
     </CardCarousel>

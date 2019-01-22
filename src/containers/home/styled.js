@@ -7,6 +7,7 @@ export const CardItem = styled.div`
 
   &:hover {
     .media-heading {
+      transition: all 0.3s;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
   }
@@ -18,7 +19,6 @@ export const CardItem = styled.div`
     text-align: center;
     font-size: 30px;
     transition: all 0.3s;
-    box-shadow: 1px 0 0 0 #F8F8F8, 0 1px 0 0 #F8F8F8, 1px 1px 0 0 #F8F8F8, 1px 0 0 0 #F8F8F8 inset, 0 1px 0 0 #F8F8F8 inset;
   }
 
   .media-body {
@@ -27,3 +27,33 @@ export const CardItem = styled.div`
     padding: 10px 0;
   }
 `;
+
+export const StyledTaskItem = styled.div`
+  width: 50%;
+  height: ${props => props.height / 2}px;
+  float: left;
+  padding: 10px;
+  color: #333;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #F8F8F8;
+    transition: all 0.3s;
+
+    &:hover {
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .total {
+    color: #459df5;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+  }
+`;
+

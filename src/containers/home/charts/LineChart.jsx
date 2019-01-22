@@ -1,28 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { Chart, Geom, Axis, Tooltip, Legend } from "bizcharts";
 import DataSet from '@antv/data-set';
 
-import ErrorBoundary from '../../components/feedback/ErrorBoundary';
-
-import {
-  G2,
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Label,
-  Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
-} from "bizcharts";
+import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 class LineChart extends React.PureComponent {
-  state = {};
-
   render() {
     const data = [
       { month: "Jan", Tokyo: 7.0, London: 3.9 },

@@ -1,19 +1,7 @@
 import * as React from "react";
-import {
-  G2,
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Label,
-  Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
-} from "bizcharts";
+import { Chart, Geom, Axis, Tooltip, Legend } from "bizcharts";
+
+import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 class AreaChart extends React.PureComponent {
   render() {
@@ -184,4 +172,8 @@ class AreaChart extends React.PureComponent {
   }
 }
 
-export default AreaChart;
+function ErrorWrapper(props) {
+  return (<ErrorBoundary><AreaChart {...props} /></ErrorBoundary>);
+}
+
+export default ErrorWrapper;

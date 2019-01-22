@@ -1,47 +1,18 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-
-import {
-  G2,
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Label,
-  Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
-} from "bizcharts";
+import { Chart, Geom, Axis, Tooltip, Coord, Label, Legend } from "bizcharts";
 import DataSet from "@antv/data-set";
+import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 class PieChart extends React.PureComponent {
   render() {
     const { DataView } = DataSet;
     const data = [
-      {
-        item: "事例一",
-        count: 40
-      },
-      {
-        item: "事例二",
-        count: 21
-      },
-      {
-        item: "事例三",
-        count: 17
-      },
-      {
-        item: "事例四",
-        count: 13
-      },
-      {
-        item: "事例五",
-        count: 9
-      }
+      { item: "事例一", count: 40 },
+      { item: "事例二", count: 21 },
+      { item: "事例三", count: 17 },
+      { item: "事例四", count: 13 },
+      { item: "事例五", count: 9 }
     ];
     const dv = new DataView();
     dv.source(data).transform({
@@ -67,7 +38,6 @@ class PieChart extends React.PureComponent {
           height={height}
           data={dv}
           scale={cols}
-          // padding={[10, 100, 80, 80]}
           forceFit
         >
           <Coord type="theta" radius={0.75} />
@@ -111,6 +81,10 @@ class PieChart extends React.PureComponent {
       </div>
     );
   }
+}
+
+function ErrorWrapper(props) {
+  return (<ErrorBoundary><PieChart {...props} /></ErrorBoundary>);
 }
 
 export default PieChart;
