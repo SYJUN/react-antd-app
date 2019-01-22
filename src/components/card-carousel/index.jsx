@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { clearfix } from '../../untils/style-consts';
+import { clearfix } from '../../utils/style-consts';
 
 import { Card } from 'antd';
 import Group from './Group';
@@ -50,6 +50,14 @@ class CardCarousel extends React.PureComponent {
 
   render() {
     const { children, cardTitle, bordered, hoverable, pageSize, trigger, height, reconstruct } = this.props;
+    // 如果 children 不是 array 类型，或者数量小于等于1时，直接渲染
+    if (!_.isArray(children) || children.length <= 1) {
+      return (
+        <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
+          <Content height={height}>{children}</Content>
+        </Card>
+      );
+    }
     const { activeIdx } = this.state;
     const splitData = CardCarousel.splitColl(children, pageSize);
     const total = Math.ceil(children.length / pageSize);

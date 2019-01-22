@@ -78,7 +78,7 @@ class LayoutPage extends PureComponent {
           </Header>
           <Layout.Content style={layoutContentStyle}>
             <RouteStyled>{this.props.routes}</RouteStyled>
-            <BackTop visibilityHeight={200} />
+            <BackTop visibilityHeight={400} />
           </Layout.Content>
           <FooterContainer />
         </Layout>

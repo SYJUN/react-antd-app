@@ -1,21 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Row, Col, Card } from 'antd';
+import { Row, Col } from 'antd';
 
 import Overview from '../../containers/home/Overview';
 import Shortcut from '../../containers/home/Shortcut';
 import Tasks from '../../containers/home/Tasks';
-import Versions from '../../containers/home/Versions';
 import Dashboard from '../../containers/home/Dashboard';
 
 const Wrapper = styled.div`
   width: 100%;
 `;
 
-const SpaceDivide = styled.div`
-  height: 20px;
-  visibility: hidden;
+const Section = styled.div`
+  padding: 8px 0;
 `;
 
 class Home extends React.PureComponent {
@@ -24,23 +22,23 @@ class Home extends React.PureComponent {
   render() {
     return (
       <Wrapper>
-        <Overview />
-        <SpaceDivide />
-
-        <Dashboard />
-        <SpaceDivide />
+        <Section>
+          <Row gutter={16}>
+            <Col span={10}>
+              <Overview />
+            </Col>
+            <Col span={7}>
+              <Tasks />
+            </Col>
+            <Col span={7}>
+              <Shortcut />
+            </Col>
+          </Row>
+        </Section>
         
-        <Row gutter={24}>
-          <Col span={8}>
-            <Shortcut />
-          </Col>
-          <Col span={8}>
-            <Tasks />
-          </Col>
-          <Col span={8}>
-            <Versions />
-          </Col>
-        </Row>
+        <Section>
+          <Dashboard />
+        </Section>
 
       </Wrapper>
     );

@@ -40,26 +40,24 @@ class LineChart extends React.PureComponent {
     };
 
     return (
-      <div>
-        <Chart height={400} data={dv} scale={cols} forceFit>
-          <Legend />
-          <Axis name="month" />
-          <Axis name="temperature" label={{ formatter: val => `${val}°C` }} />
-          <Tooltip crosshairs={{ type: "y" }} />
-          <Geom type="line" position="month*temperature" size={2} shape="smooth" color={"city"} />
-          <Geom
-            type="point"
-            position="month*temperature"
-            size={4}
-            shape="circle"
-            color={"city"}
-            style={{
-              stroke: "#fff",
-              lineWidth: 1
-            }}
-          />
-        </Chart>
-      </div>
+      <Chart height={400} data={dv} scale={cols} forceFit>
+        <Legend />
+        <Axis name="month" />
+        <Axis name="temperature" label={{ formatter: val => `${val}°C` }} />
+        <Tooltip crosshairs={{ type: "y" }} />
+        <Geom type="line" position="month*temperature" size={2} shape="smooth" color={"city"} />
+        <Geom
+          type="point"
+          position="month*temperature"
+          size={4}
+          shape="circle"
+          color={"city"}
+          style={{
+            stroke: "#fff",
+            lineWidth: 1
+          }}
+        />
+      </Chart>
     );
   }
 }

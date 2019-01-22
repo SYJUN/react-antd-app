@@ -44,10 +44,10 @@ const data = [
 
 function Tasks(props) {
   return (
-    <CardCarousel trigger="hover" pageSize={4} cardTitle="待办事项" height={204}>
+    <CardCarousel trigger="hover" pageSize={4} cardTitle="待办事项" height={235}>
       {data.map((item, idx) => {
         return (
-          <StyledTaskItem key={idx} height={204}>
+          <StyledTaskItem key={idx} height={235}>
             <div className="content">
               <span>{item.label}</span>
               <div className="total">{item.value}</div>

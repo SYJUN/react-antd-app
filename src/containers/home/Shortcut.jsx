@@ -48,7 +48,7 @@ const data = [
 
 function Shortcut(props) {
   return (
-    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" height={204}>
+    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" height={235}>
       {data.map((item, idx) => {
         return (
           <CardItem key={idx}>
