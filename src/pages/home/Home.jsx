@@ -8,6 +8,8 @@ import Shortcut from '../../containers/home/Shortcut';
 import Tasks from '../../containers/home/Tasks';
 import Dashboard from '../../containers/home/Dashboard';
 import Activities from '../../containers/home/Activities';
+import Comments from '../../containers/home/Comments';
+import Versions from '../../containers/home/Versions';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -44,11 +46,13 @@ class Home extends React.PureComponent {
         <Section>
           <Row gutter={16}>
             <Col span={8}>
+              <Comments />
+            </Col>
+            <Col span={8}>
               <Activities />
             </Col>
             <Col span={8}>
-            </Col>
-            <Col span={8}>
+              <Versions />
             </Col>
           </Row>
         </Section>

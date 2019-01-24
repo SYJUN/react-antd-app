@@ -44,8 +44,6 @@ class Activities extends React.PureComponent {
       { id: 3, title: '创建项目3', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'underway' },
       { id: 4, title: '创建项目4', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
       { id: 5, title: '创建项目5', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
-      { id: 6, title: '创建项目6', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
-      { id: 7, title: '创建项目7', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
     ];
     const icons = {
       finish: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,         // 完成
