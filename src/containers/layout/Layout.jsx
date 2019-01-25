@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Layout, Icon, BackTop } from 'antd';
 
@@ -6,21 +7,21 @@ import SiderContainer from './Sider';
 import FooterContainer from './Footer';
 
 const layoutContentStyle = {
-  margin: '80px 16px 0', 
+  margin: '80px 16px 0',
   overflow: 'initial',
 };
 
 const Wrapper = styled(Layout)`
   .collapsed-layout {
     width: 100%;
-    padding-left: 80px;
+    padding-left: ${props => props.ismini === 'no' ? '80px' : '0'};
     transition: all 0.3s;
     overflow: hidden;
   }
 
   .no-collapsed-layout {
     width: 100%;
-    padding-left: 200px;
+    padding-left: ${props => props.ismini === 'no' ? '200px' : '80px'};
     transition: all 0.3s;
     overflow: hidden;
   }
@@ -53,26 +54,62 @@ const RouteStyled = styled.div`
 `;
 
 class LayoutPage extends PureComponent {
+  broken = false;
+  
   state = {
+    trigger: false,
     collapsed: false,
+    width: 0,
+    collapsedWidth: 0,
+    ismini: 'no',
   };
-
-  toggle = () => {
+  
+  handleBreakpoint = broken => {
+    this.broken = broken;
+    if (broken) {
+      this.setState({ collapsed: true, trigger: true });
+    } else {
+      this.setState({ collapsed: false, trigger: false });
+    }
+    
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsedWidth: broken ? 0 : 80,
+      width: broken ? 80 : 200,
+      ismini: broken ? 'yes' : 'no',
     });
   };
 
+  toggle = () => {
+    if (this.broken) {
+      this.setState({
+        trigger: !this.state.trigger,
+        collapsedWidth: this.state.trigger ? 80 : 0,
+        width: this.state.trigger ? 80 : 0,
+      });
+    } else {
+      this.setState({
+        trigger: !this.state.trigger,
+        collapsed: !this.state.collapsed,
+      });
+    }
+  };
+
   render() {
-    const { collapsed } = this.state;
+    const { trigger, collapsed, collapsedWidth, width, ismini } = this.state;
 
     return (
-      <Wrapper>
-        <SiderContainer collapsed={collapsed} />
-        <Layout className={collapsed ? 'collapsed-layout' : 'no-collapsed-layout'}>
+      <Wrapper ismini={ismini}>
+        <SiderContainer
+          collapsed={collapsed}
+          breakpoint="lg"
+          collapsedWidth={collapsedWidth}
+          width={width}
+          onBreakpoint={this.handleBreakpoint}
+        />
+        <Layout className={trigger ? 'collapsed-layout' : 'no-collapsed-layout'}>
           <Header>
             <TriggerIcon
-              type={collapsed ? 'menu-unfold' : 'menu-fold'}
+              type={trigger ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
             />
           </Header>
@@ -86,5 +123,9 @@ class LayoutPage extends PureComponent {
     );
   }
 }
+
+LayoutPage.propTypes = {
+  routes: PropTypes.array.isRequired,
+};
 
 export default LayoutPage;

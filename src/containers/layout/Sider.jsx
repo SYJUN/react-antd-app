@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -21,82 +21,80 @@ const SiderContainer = styled(Layout.Sider)`
 const Logo = styled.div`
   width: 120px;
   height: 31px;
-  background: rgba(255,255,255,.2);  
+  background: rgba(255,255,255,.2);
   margin: 16px 28px 16px;
   float: left;
 `;
 
-class Sider extends PureComponent {
-  state = {
-    collapsed: false,
-  };
-
-  render() {
-    const { collapsed } = this.props;
-
-    return (
-      <SiderContainer 
-        theme="dark"
-        trigger={null}
-        width={200}
-        collapsible
-        collapsedWidth={80}
-        collapsed={collapsed}
+function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
+  return (
+    <SiderContainer
+      theme="dark"
+      trigger={null}
+      width={width}
+      collapsible
+      collapsedWidth={collapsedWidth}
+      collapsed={collapsed}
+      breakpoint={breakpoint}
+      onBreakpoint={onBreakpoint}
+    >
+      <Logo className="logo" />
+      <Scrollbars
+        autoHide
+        autoHideTimeout={1000}
+        autoHideDuration={200}
+        autoHeight
+        autoHeightMin={0}
+        autoHeightMax="100vh"
+        thumbMinSize={30}
       >
-        <Logo className="logo" />
-        <Scrollbars 
-          autoHide
-          autoHideTimeout={1000}
-          autoHideDuration={200}
-          autoHeight
-          autoHeightMin={0}
-          autoHeightMax="100vh"
-          thumbMinSize={30}
+        <Menu
+          mode="inline"
+          theme="dark"
+          inlineCollapsed={collapsed}
+          defaultSelectedKeys={['0-0']}
         >
-          <Menu
-            mode="inline" 
-            theme="dark"
-            inlineCollapsed={collapsed}
-            defaultSelectedKeys={['0-0']}
-          >
-            {navList.map((item, navIdx) => {
-              if (item.sub_menus) {
-                return (
-                  <Menu.SubMenu
-                    key={`0-${navIdx}`}
-                    title={<span><Icon type={item.icon_type} /><span>{item.label}</span></span>}
-                  >
-                    {item.sub_menus.map((sub, subIdx) => {
-                      return (
-                        <Menu.Item key={`0-${navIdx}-${subIdx}`}>
-                          <NavLink to={sub.path}>
-                            <Icon type={sub.icon_type} />
-                            <span className="nav-text">{sub.label}</span>
-                          </NavLink>
-                        </Menu.Item>
-                      );
-                    })}
-                  </Menu.SubMenu>
-                );
-              }
+          {navList.map((item, navIdx) => {
+            if (item.sub_menus) {
               return (
-                <Menu.Item key={`0-${navIdx}`}>
-                  <NavLink to={item.path}>
-                    <Icon type={item.icon_type} />
-                    <span className="nav-text">{item.label}</span>
-                  </NavLink>
-                </Menu.Item>
+                <Menu.SubMenu
+                  key={`0-${navIdx}`}
+                  title={<span><Icon type={item.icon_type} /><span>{item.label}</span></span>}
+                >
+                  {item.sub_menus.map((sub, subIdx) => {
+                    return (
+                      <Menu.Item key={`0-${navIdx}-${subIdx}`}>
+                        <NavLink to={sub.path}>
+                          <Icon type={sub.icon_type} />
+                          <span className="nav-text">{sub.label}</span>
+                        </NavLink>
+                      </Menu.Item>
+                    );
+                  })}
+                </Menu.SubMenu>
               );
-            })}
-          </Menu>
-        </Scrollbars>
-      </SiderContainer>
-    );
-  }
+            }
+            return (
+              <Menu.Item key={`0-${navIdx}`}>
+                <NavLink to={item.path}>
+                  <Icon type={item.icon_type} />
+                  <span className="nav-text">{item.label}</span>
+                </NavLink>
+              </Menu.Item>
+            );
+          })}
+        </Menu>
+      </Scrollbars>
+    </SiderContainer>
+  );
 }
 
 Sider.propTypes = {
   collapsed: PropTypes.bool.isRequired,
+  collapsedWidth: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.string.isRequired,
+  onBreakpoint: PropTypes.func.isRequired,
 };
 
 function ErrorWrapper(props) {

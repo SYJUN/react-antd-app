@@ -25,37 +25,43 @@ class Home extends React.PureComponent {
   render() {
     return (
       <Wrapper>
-        <Section>
-          <Row gutter={16}>
-            <Col span={10}>
+        <Row gutter={{ xs: 8, sm: 16 }}>
+          <Col md={24} lg={24} xl={10}>
+            <Section>
               <Overview />
-            </Col>
-            <Col span={7}>
+            </Section>
+          </Col>
+          <Col md={24} lg={12} xl={7}>
+            <Section>
               <Tasks />
-            </Col>
-            <Col span={7}>
+            </Section>
+          </Col>
+          <Col md={24} lg={12} xl={7}>
+            <Section>
               <Shortcut />
-            </Col>
-          </Row>
-        </Section>
+            </Section>
+          </Col>
+        </Row>
         
-        <Section>
-          <Dashboard />
-        </Section>
-        
-        <Section>
-          <Row gutter={16}>
-            <Col span={8}>
+        <Dashboard />
+  
+        <Row gutter={{ xs: 8, sm: 16 }}>
+          <Col sm={24} md={24} xl={10}>
+            <Section>
               <Comments />
-            </Col>
-            <Col span={8}>
+            </Section>
+          </Col>
+          <Col sm={24} md={12} xl={7}>
+            <Section>
               <Activities />
-            </Col>
-            <Col span={8}>
+            </Section>
+          </Col>
+          <Col sm={24} md={12} xl={7}>
+            <Section>
               <Versions />
-            </Col>
-          </Row>
-        </Section>
+            </Section>
+          </Col>
+        </Row>
 
       </Wrapper>
     );

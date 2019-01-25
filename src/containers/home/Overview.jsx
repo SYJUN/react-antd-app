@@ -70,10 +70,10 @@ class Overview extends React.PureComponent {
       data.map((item, idx) => {
         return (
           <List key={idx}>
-            <Row gutter={16}>
+            <Row gutter={{ xs: 8, sm: 16 }}>
               {item.map((o, k) => {
                 return (
-                  <Col span={12} key={k}>
+                  <Col xs={24} sm={12} key={k}>
                     <Card title={o.title} extra={<CardExtra bgColor={o.extra.bg_color}>{o.extra.label}</CardExtra>}>
                       <Item>
                         <div className="number">{decimalize(o.value, 0)}</div>
