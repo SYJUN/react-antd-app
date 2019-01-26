@@ -6,7 +6,7 @@ import { Row, Col, Card, Icon } from 'antd';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 
 const List = styled.div`
-  margin: 8px 0;
+  margin: 0.8rem 0;
 
   &:nth-child(1) {
     margin-top: 0;
@@ -19,9 +19,9 @@ const List = styled.div`
 
 const Item = styled.div`
   .number {
-    font-size: 28px;
-    line-height: 28px;
-    padding-bottom: 10px;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    padding-bottom: 1rem;
     color: #666;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -42,8 +42,8 @@ const Item = styled.div`
 
 const CardExtra = styled.span`
   background: ${props => props.bgColor ? props.bgColor : '#ddd'};
-  padding: 2px 5px;
-  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
   color: #fff;
 `;
 

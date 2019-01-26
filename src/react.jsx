@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from '@core/store';
 import reducerRegistry from '@core/store/reducer-registry';
 import Router from './routes';
+import '../assets/stylesheets/main.scss';
 
 function customizer(objValue, srcValue) {
   if (_.isArray(objValue)) {

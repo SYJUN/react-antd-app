@@ -37,9 +37,9 @@ const Header = styled(Layout.Header)`
 `;
 
 const TriggerIcon = styled(Icon)`
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
+  font-size: 1.8rem;
+  line-height: 6.4rem;
+  padding: 0 2.4rem;
   cursor: pointer;
   transition: color .3s;
 

@@ -9,26 +9,26 @@ const StyledTaskItem = styled.div`
   width: 50%;
   height: ${props => props.height / 2}px;
   float: left;
-  padding: 10px;
+  padding: 1rem;
   color: #333;
 
   .content {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 0.8rem;
     cursor: pointer;
     background-color: #F8F8F8;
     transition: all 0.3s;
 
     &:hover {
       transition: all 0.3s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
     }
   }
 
   .total {
     color: #459df5;
-    font-size: 30px;
+    font-size: 2.8rem;
     font-weight: 300;
     font-style: normal;
   }
@@ -44,10 +44,10 @@ const data = [
 
 function Tasks(props) {
   return (
-    <CardCarousel trigger="hover" pageSize={4} cardTitle="待办事项" height={235}>
+    <CardCarousel trigger="hover" pageSize={4} cardTitle="待办事项" height={248}>
       {data.map((item, idx) => {
         return (
-          <StyledTaskItem key={idx} height={235}>
+          <StyledTaskItem key={idx} height={248}>
             <div className="content">
               <span>{item.label}</span>
               <div className="total">{item.value}</div>

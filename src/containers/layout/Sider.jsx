@@ -19,10 +19,10 @@ const SiderContainer = styled(Layout.Sider)`
 `;
 
 const Logo = styled.div`
-  width: 120px;
-  height: 31px;
+  width: 12rem;
+  height: 3.1rem;
   background: rgba(255,255,255,.2);
-  margin: 16px 28px 16px;
+  margin: 1.6rem 2.8rem 1.6rem;
   float: left;
 `;
 

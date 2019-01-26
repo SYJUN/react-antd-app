@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Section = styled.div`
-  padding: 8px 0;
+  padding: 0.8rem 0;
 `;
 
 class Home extends React.PureComponent {

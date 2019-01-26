@@ -18,15 +18,13 @@ const data = [
 function Versions() {
   return (
     <Card title="版本信息" bordered={false}>
-      <div style={{ height: '204px' }}>
-        <Table 
-          bordered
-          showHeader={false}
-          pagination={false}
-          columns={columns} 
-          dataSource={data} 
-        />
-      </div>
+      <Table
+        bordered
+        showHeader={false}
+        pagination={false}
+        columns={columns}
+        dataSource={data}
+      />
     </Card>
   );
 }

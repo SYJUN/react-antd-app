@@ -20,17 +20,17 @@ const CardItem = styled.div`
 
   .media-heading {
     background-color: #F8F8F8;
-    padding: 8px 0;
-    margin: 0 10px;
+    padding: 1rem 0.5rem;
+    margin: 0 0.5rem;
     text-align: center;
-    font-size: 30px;
+    font-size: 3rem;
     transition: all 0.3s;
   }
 
   .media-body {
     text-align: center;
     color: #333;
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 `;
 
@@ -48,7 +48,7 @@ const data = [
 
 function Shortcut(props) {
   return (
-    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" height={235}>
+    <CardCarousel trigger="click" pageSize={8} cardTitle="快捷方式" height={248}>
       {data.map((item, idx) => {
         return (
           <CardItem key={idx}>
