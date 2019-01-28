@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const themeConf = require('./webpack.theme.config');
 
-
 const devMode = process.env.NODE_ENV !== 'production';
 const env = devMode ? 'dev' : 'prod';
 
@@ -57,6 +56,24 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
               sourceMap: true,
               modifyVars: themeConf(),
               javascriptEnabled: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { cacheDirectory: true },
+          },
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              runtimeGenerator: path.resolve('./core/icons/runtime-generator'),
+              runtimeOptions: {
+                iconModule: path.resolve('./core/icons/Icon.jsx'),
+              },
             },
           },
         ],

@@ -2,6 +2,14 @@
 import React from 'react';
 
 import { Icon } from 'antd';
+import CircleIcon from '../../../assets/svgs/circle.svg';
+
+const customIconStyle = {
+  width: '8px',
+  height: '8px',
+  color: '#fff',
+  marginRight: '5px',
+};
 
 export default [
   {
@@ -17,7 +25,7 @@ export default [
       {
         label: "按钮",
         path: "/ui-elements/buttons",
-        icon: '',
+        icon: <CircleIcon style={customIconStyle} />,
       },
     ],
   },
