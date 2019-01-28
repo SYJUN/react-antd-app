@@ -42,6 +42,7 @@
   "globals": {
     "process": true,
     "__dirname": true,
+    "_": true,
     "require": true,
     "module": true,
     "console": true,

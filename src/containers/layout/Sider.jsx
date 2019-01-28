@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import navList from './sider-nav-list';
 
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 
 const SiderContainer = styled(Layout.Sider)`
   width: 100%;
@@ -27,6 +27,24 @@ const Logo = styled.div`
 `;
 
 function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
+  const hash = location.hash.substr(1);
+  let defaultSelectedKeys = ['0-0'];
+  let defaultOpenKeys = [];
+  navList.forEach((item, idx) => {
+    if (_.startsWith(hash, item.path)) {
+      defaultSelectedKeys = [`0-${idx}`];
+      
+      if (item.sub_menus) {
+        item.sub_menus.forEach((o, i) => {
+          if (o.path === hash) {
+            defaultSelectedKeys = [`0-${idx}-${i}`];
+            defaultOpenKeys = [`0-${idx}`];
+          }
+        });
+      }
+    }
+  });
+
   return (
     <SiderContainer
       theme="dark"
@@ -52,20 +70,21 @@ function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
           mode="inline"
           theme="dark"
           inlineCollapsed={collapsed}
-          defaultSelectedKeys={['0-0']}
+          defaultOpenKeys={defaultOpenKeys}
+          defaultSelectedKeys={defaultSelectedKeys}
         >
           {navList.map((item, navIdx) => {
             if (item.sub_menus) {
               return (
                 <Menu.SubMenu
                   key={`0-${navIdx}`}
-                  title={<span><Icon type={item.icon_type} /><span>{item.label}</span></span>}
+                  title={<span>{item.icon}<span>{item.label}</span></span>}
                 >
                   {item.sub_menus.map((sub, subIdx) => {
                     return (
                       <Menu.Item key={`0-${navIdx}-${subIdx}`}>
                         <NavLink to={sub.path}>
-                          <Icon type={sub.icon_type} />
+                          {sub.icon}
                           <span className="nav-text">{sub.label}</span>
                         </NavLink>
                       </Menu.Item>
@@ -77,7 +96,7 @@ function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
             return (
               <Menu.Item key={`0-${navIdx}`}>
                 <NavLink to={item.path}>
-                  <Icon type={item.icon_type} />
+                  {item.icon}
                   <span className="nav-text">{item.label}</span>
                 </NavLink>
               </Menu.Item>

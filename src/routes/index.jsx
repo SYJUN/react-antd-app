@@ -6,9 +6,11 @@ import styled from 'styled-components';
 import Layout from '../containers/layout/Layout';
 
 import homeRoutes from './home';
+import uiElements from './ui-elements';
 
 const routes = [
   ...homeRoutes,
+  ...uiElements,
 ];
 
 const Wrapper = styled.div`

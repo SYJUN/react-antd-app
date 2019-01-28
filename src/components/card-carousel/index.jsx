@@ -53,7 +53,7 @@ class CardCarousel extends React.PureComponent {
     // 如果 children 不是 array 类型，或者数量小于等于1时，直接渲染
     if (!_.isArray(children) || children.length <= 1) {
       return (
-        <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
+        <Card title={cardTitle} bordered={bordered} hoverable={hoverable}>
           <Content height={height}>{children}</Content>
         </Card>
       );
@@ -91,6 +91,7 @@ CardCarousel.propTypes = {
   bordered: PropTypes.bool,
   hoverable: PropTypes.bool,
   reconstruct: PropTypes.bool,
+  trigger: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
 };
 

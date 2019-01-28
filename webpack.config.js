@@ -58,7 +58,7 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
               modifyVars: themeConf(),
               javascriptEnabled: true,
             },
-          }
+          },
         ],
       },
     ],
