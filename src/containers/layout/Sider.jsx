@@ -11,7 +11,7 @@ import { Layout, Menu } from 'antd';
 const SiderContainer = styled(Layout.Sider)`
   width: 100%;
   min-height: 100vh;
-  position: fixed;
+  position: fixed !important;
   left: 0;
   top: 0;
   z-index: 1;

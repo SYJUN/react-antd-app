@@ -1,6 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Layout from '../containers/layout/Layout';
@@ -19,12 +18,10 @@ const Wrapper = styled.div`
 
 function Router() {
   return (
-    <HashRouter>
-      <Wrapper>
-        <Layout routes={routes.map((route, idx) => (<Route key={idx} {...route} />))} />
-      </Wrapper>
-    </HashRouter>
+    <Wrapper>
+      <Layout routes={routes.map((route, idx) => (<Route key={idx} {...route} />))} />
+    </Wrapper>
   );
 }
 
-export default hot(module)(Router);
+export default Router;
