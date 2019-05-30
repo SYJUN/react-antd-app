@@ -28,17 +28,17 @@ const Logo = styled.div`
 
 function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
   const hash = location.hash.substr(1);
-  let defaultSelectedKeys = ['0-0'];
+  let defaultSelectedKeys = ['/home'];
   let defaultOpenKeys = [];
-  navList.forEach((item, idx) => {
+  navList.forEach(item => {
     if (_.startsWith(hash, item.path)) {
-      defaultSelectedKeys = [`0-${idx}`];
+      defaultSelectedKeys = [item.path];
       
-      if (item.sub_menus) {
-        item.sub_menus.forEach((o, i) => {
+      if (item.children) {
+        item.children.forEach(o => {
           if (o.path === hash) {
-            defaultSelectedKeys = [`0-${idx}-${i}`];
-            defaultOpenKeys = [`0-${idx}`];
+            defaultSelectedKeys = [o.path];
+            defaultOpenKeys = [item.path];
           }
         });
       }
@@ -73,16 +73,16 @@ function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKeys}
         >
-          {navList.map((item, navIdx) => {
-            if (item.sub_menus) {
+          {navList.map(item => {
+            if (item.children) {
               return (
                 <Menu.SubMenu
-                  key={`0-${navIdx}`}
+                  key={item.path}
                   title={<span>{item.icon}<span>{item.label}</span></span>}
                 >
-                  {item.sub_menus.map((sub, subIdx) => {
+                  {item.children.map(sub => {
                     return (
-                      <Menu.Item key={`0-${navIdx}-${subIdx}`}>
+                      <Menu.Item key={sub.path}>
                         <NavLink to={sub.path}>
                           {sub.icon}
                           <span className="nav-text">{sub.label}</span>
@@ -94,7 +94,7 @@ function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
               );
             }
             return (
-              <Menu.Item key={`0-${navIdx}`}>
+              <Menu.Item key={item.path}>
                 <NavLink to={item.path}>
                   {item.icon}
                   <span className="nav-text">{item.label}</span>

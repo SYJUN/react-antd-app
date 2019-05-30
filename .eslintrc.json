@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "react"
+    "react",
+    "react-hooks"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -22,6 +23,8 @@
     "react/jsx-curly-spacing": "error",
     "react/jsx-tag-spacing": "error",
     "react/jsx-indent": ["error", 2],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "jsx-quotes": "error",
     "semi": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],

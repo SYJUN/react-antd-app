@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Layout, Icon, BackTop } from 'antd';
@@ -48,7 +49,7 @@ const TriggerIcon = styled(Icon)`
   }
 `;
 
-const RouteStyled = styled.div`
+const RouteStyled = styled(Switch)`
   /* padding: 24px; */
   /* background: #fff; */
 `;

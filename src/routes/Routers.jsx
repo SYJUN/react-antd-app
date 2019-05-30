@@ -4,13 +4,17 @@ import styled from 'styled-components';
 
 import Layout from '../containers/layout/Layout';
 
+import noMatchRoute from './no-match';
 import homeRoutes from './home';
-import uiElements from './ui-elements';
+import uiElementsRoutes from './ui-elements';
 
 const routes = [
   ...homeRoutes,
-  ...uiElements,
+  ...uiElementsRoutes,
 ];
+
+// 添加 404 页面
+routes.push(noMatchRoute);
 
 const Wrapper = styled.div`
   height: 100%;

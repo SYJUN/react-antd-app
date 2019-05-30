@@ -21,17 +21,17 @@ export default [
     label: "UI元素",
     path: '/ui-elements',
     icon: <Icon type="deployment-unit" />,
-    sub_menus: [
+    children: [
       {
         label: "按钮",
         path: "/ui-elements/buttons",
         icon: <CircleIcon style={customIconStyle} />,
       },
+      {
+        label: "表格",
+        path: "/ui-elements/tables",
+        icon: <CircleIcon style={customIconStyle} />,
+      },
     ],
-  },
-  {
-    label: "表格",
-    path: "/table",
-    icon: <Icon type="table" />,
   },
 ];
