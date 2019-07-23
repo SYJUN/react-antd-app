@@ -69,7 +69,6 @@ function Sider({ collapsed, collapsedWidth, width, breakpoint, onBreakpoint }) {
         <Menu
           mode="inline"
           theme="dark"
-          inlineCollapsed={collapsed}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKeys}
         >

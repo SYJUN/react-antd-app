@@ -25,11 +25,11 @@
   "homepage": "https://github.com/SYJUN/react-antd-app#readme",
   "dependencies": {
     "@antv/data-set": "^0.10.1",
-    "antd": "^3.19.1",
+    "antd": "^3.20.5",
     "bizcharts": "^3.5.2",
     "humps": "^2.0.1",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "qs": "^6.5.2",
     "react": "^16.8.6",

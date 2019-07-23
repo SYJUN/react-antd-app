@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const wc = require('webpack-config');
 const path = require('path');
-const WebpackBar = require('webpackbar')
+const WebpackBar = require('webpackbar');
 
 module.exports = new wc.Config().merge({
   devtool: 'cheap-module-eval-source-map',
@@ -19,8 +19,8 @@ module.exports = new wc.Config().merge({
       colors: true,
       chunk: true,
     },
-    host: '0.0.0.0',
-    port: 3100,
+    host: 'localhost',
+    port: 4000,
     hot: true,
   },
 });
