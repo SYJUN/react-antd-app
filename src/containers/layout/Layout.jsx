@@ -30,7 +30,7 @@ const Wrapper = styled(Layout)`
 
 const Header = styled(Layout.Header)`
   position: fixed;
-  z-index: 99999;
+  z-index: 999;
   width: 100%;
   background: #fff !important;
   padding: 0 !important;

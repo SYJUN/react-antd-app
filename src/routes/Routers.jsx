@@ -7,10 +7,12 @@ import Layout from '../containers/layout/Layout';
 import noMatchRoute from './no-match';
 import homeRoutes from './home';
 import uiElementsRoutes from './ui-elements';
+import examRoutes from './exam';
 
 const routes = [
   ...homeRoutes,
   ...uiElementsRoutes,
+  ...examRoutes,
 ];
 
 // 添加 404 页面

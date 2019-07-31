@@ -22,6 +22,7 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
     extensions: ['.js', '.jsx'],
     alias: {
       '@core': path.resolve(__dirname, 'core'),
+      '@public': path.resolve(__dirname, 'public'),
     },
   },
   externals: {

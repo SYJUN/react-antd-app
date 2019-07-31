@@ -34,4 +34,21 @@ export default [
       },
     ],
   },
+  {
+    label: '统考',
+    path: '/exam',
+    icon: <Icon type="solution" />,
+    children: [
+      {
+        label: '计算机应用基础',
+        path: '/exam/computer',
+        icon: <CircleIcon style={customIconStyle} />,
+      },
+      {
+        label: '大学英语B',
+        path: '/exam/english',
+        icon: <CircleIcon style={customIconStyle} />,
+      },
+    ],
+  },
 ];
