@@ -1,5 +1,6 @@
 import basicDB from './basic.db';
 import windowsDB from './windows.db';
+import wordDB from './word.db';
 
 const setExtraKey = (data) => {
   return data.map(item => {
@@ -54,6 +55,13 @@ export default {
       title: 'Windows操作系统及其应用',
       description: '',
       data: getRandomData(setExtraKey(windowsDB), 5),
+    },
+    {
+      name: 'word',
+      type: 'choice',
+      title: 'Word 文字编辑',
+      description: '',
+      data: getRandomData(setExtraKey(wordDB), 5),
     },
   ],
 };
