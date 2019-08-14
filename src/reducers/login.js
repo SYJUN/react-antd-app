@@ -1,4 +1,5 @@
 import { LOGIN_APP, GET_LOGIN_APP_STATUS } from '../action-types/login';
+import * as _ from 'lodash';
 
 export default function loginApp(state = {}, action) {
   if (action.type === LOGIN_APP) {

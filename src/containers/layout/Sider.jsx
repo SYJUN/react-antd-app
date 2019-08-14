@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Scrollbars } from 'react-custom-scrollbars';
+import * as _ from 'lodash';
 import styled from 'styled-components';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import navList from './sider-nav-list';

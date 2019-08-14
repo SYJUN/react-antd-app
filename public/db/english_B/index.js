@@ -1,4 +1,6 @@
-import communicativeEnglishDB from './communicative_English.db';
+import communicativeEnglishDB from './communicative-english.db';
+import vocabularyEnglishDB from './vocabulary-english.db';
+import englishChineseTranslation from './english-chinese-translation.db';
 
 const setExtraKey = (data) => {
   return data.map(item => {
@@ -40,12 +42,26 @@ export default {
   code: 1,
   message: 'success',
   data: [
+    // {
+    //   name: 'communicative_english',
+    //   type: 'choice',
+    //   title: '交际英语',
+    //   description: '',
+    //   data: getRandomData(setExtraKey(communicativeEnglishDB), 15),
+    // },
     {
-      name: 'communicative_english',
+      name: 'vocabulary_english',
       type: 'choice',
-      title: '交际英语',
+      title: '词汇与结构',
       description: '',
-      data: getRandomData(setExtraKey(communicativeEnglishDB), 15),
+      data: getRandomData(setExtraKey(vocabularyEnglishDB), 15),
+    },
+    {
+      name: 'english_chinese_translation',
+      type: 'translation',
+      title: '英译汉',
+      description: '',
+      data: getRandomData(setExtraKey(englishChineseTranslation), 15),
     },
   ],
 };

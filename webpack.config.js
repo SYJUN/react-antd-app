@@ -25,9 +25,9 @@ module.exports = new wc.Config().extend(`./webpack.${env}.config.js`).merge({
       '@public': path.resolve(__dirname, 'public'),
     },
   },
-  externals: {
-    lodash: '_',
-  },
+  // externals: {
+  //   lodash: '_',
+  // },
   module: {
     rules: [
       {

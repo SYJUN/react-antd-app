@@ -5,6 +5,7 @@ import configureStore from '@core/store';
 import reducerRegistry from '@core/store/reducer-registry';
 import App from './routes/App';
 import '../assets/stylesheets/main.scss';
+import * as _ from 'lodash';
 
 function customizer(objValue, srcValue) {
   if (_.isArray(objValue)) {

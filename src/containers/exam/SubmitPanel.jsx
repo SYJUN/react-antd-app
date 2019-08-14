@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Button, Modal, Row, Col } from 'antd';
+import { Button, Modal, Row, Col, Tooltip } from 'antd';
 
 const CategoryWrapper = styled.div`
   margin-bottom: 10px;
@@ -76,7 +76,9 @@ export default class SubmitPanel extends React.PureComponent {
                   return (
                     <Col span={4} key={idx}>
                       {item.questionNum}、
-                      <Text red={!item.isRight}>{item.selectValue}</Text>
+                      <Tooltip title={item.answer}>
+                        <Text red={!item.isRight}>{item.selectValue}</Text>
+                      </Tooltip>
                     </Col>
                   );
                 })}

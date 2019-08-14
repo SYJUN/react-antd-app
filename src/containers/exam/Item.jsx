@@ -55,7 +55,7 @@ export default class Item extends React.PureComponent {
         <div>{questionNum}. {data.question}</div>
         <OptionStyle>
           <Radio.Group onChange={this.onChange(data)} value={this.state.value}>
-            {this.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.name}</Radio>))}
+            {this.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
           </Radio.Group>
         </OptionStyle>
       </Wrapper>

@@ -72,24 +72,43 @@ export default class English extends React.PureComponent {
         </div>
         <div>
           {this.list.map((item, idx) => {
-            return (
-              <div key={idx}>
-                <Title>{item.title}</Title>
-                <div>
-                  {item.data.map(question => {
-                    return (
-                      <Item
-                        key={question.questionNum}
-                        parent={item}
-                        data={question}
-                        questionNum={question.questionNum}
-                        onChoice={this.onChoice}
-                      />
-                    );
-                  })}
+            if (item.type === 'choice') {
+              return (
+                <div key={idx}>
+                  <Title>{item.title}</Title>
+                  <div>
+                    {item.data.map(question => {
+                      return (
+                        <Item
+                          key={question.questionNum}
+                          parent={item}
+                          data={question}
+                          questionNum={question.questionNum}
+                          onChoice={this.onChoice}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            );
+              );
+            } else if (item.type === 'translation') {
+              return (
+                <div key={idx}>
+                  <Title>{item.title}</Title>
+                  <div>
+                    {item.data.map(question => {
+                      return (
+                        <div key={question.questionNum}>
+                          {question.question}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
+            return null;
           })}
         </div>
         <SubmitPanel list={this.list} visible={this.state.visible} onOk={this.handleSubmitPanelOk} />
