@@ -5,7 +5,7 @@ import find from 'lodash/find';
 import forEach from 'lodash/forEach';
 import assign from 'lodash/assign';
 
-import { Button } from 'antd';
+import { Button, Input } from 'antd';
 import Item from '../../containers/exam/Item';
 import SubmitPanel from '../../containers/exam/SubmitPanel';
 
@@ -75,7 +75,7 @@ export default class English extends React.PureComponent {
             if (item.type === 'choice') {
               return (
                 <div key={idx}>
-                  <Title>{item.title}</Title>
+                  <Title>{idx + 1}、{item.title}</Title>
                   <div>
                     {item.data.map(question => {
                       return (
@@ -94,12 +94,16 @@ export default class English extends React.PureComponent {
             } else if (item.type === 'translation') {
               return (
                 <div key={idx}>
-                  <Title>{item.title}</Title>
+                  <Title>{idx + 1}、{item.title}</Title>
                   <div>
                     {item.data.map(question => {
                       return (
                         <div key={question.questionNum}>
-                          {question.question}
+                          {question.questionNum}、{question.question}
+                          
+                          <div>
+                            <Input type="text" />
+                          </div>
                         </div>
                       );
                     })}
