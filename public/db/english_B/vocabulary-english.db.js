@@ -5,6 +5,7 @@ export default [
     translate: '我不知道该做什么，但突然间我有了一个主意。',
     options: ['A．appeared', 'B．happened', 'C．occurred', 'D．emerged'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export default [
     translate: '此刻我需要的是一副眼镜。',
     options: ['A．is', 'B．are', 'C．has', 'D．hav'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export default [
     translate: '你最好尽快去看医生。',
     options: ['A．seeing', 'B．saw', 'C．see', 'D．seen'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export default [
     translate: '除了这些荣誉外，他还得到了一笔钱。',
     options: ['A．Except', 'B．But', 'C．Besides', 'D．Outside'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export default [
     translate: '妈，让我和同学一起去公园好吗？',
     options: ['A．me go', 'B．me going', 'C．I go', 'D．I going'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export default [
     translate: '比尔和他的父母都不在家。',
     options: ['A．is', 'B．has', 'C．are', 'D．was'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ export default [
     translate: '如果你不想被弄湿，最好带上这把伞。',
     options: ['A．take', 'B．to take', 'C．taken', 'D．for taking'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ export default [
     translate: '麻疹需要很长一段时间才会治好。',
     options: ['A．spend', 'B．spends', 'C．take', 'D．takes'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ export default [
     translate: '您愿意等吗？ 五天等待的时间对于我来说太长了。',
     options: ['A．was', 'B．were', 'C．is', 'D．are'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ export default [
     translate: '桌子上有一本书和一些杂志。',
     options: ['A．is', 'B．are', 'C．have', 'D．has'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ export default [
     translate: '这是个好主意。但谁去执行计划呢？我认为约翰和比德可以去执行这个计划。',
     options: ['A．carry out', 'B．get through', 'C．take in', 'D．set aside'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ export default [
     translate: '在他上网查找资料的时候计算机系统突然瘫痪了。',
     options: ['A．broke down', 'B．broke out', 'C．broke up', 'D．broke in'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 13,
@@ -89,6 +101,7 @@ export default [
     translate: '如果她想保持身材苗条，就必须在饮食上有所改变。',
     options: ['A．change', 'B．turn', 'C．run', 'D．Go'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 14,
@@ -96,6 +109,7 @@ export default [
     translate: '在独立战争以前，美国是英国的一个殖民地。',
     options: ['A．Before', 'B．At', 'C．In', 'D．Between'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 15,
@@ -103,6 +117,7 @@ export default [
     translate: '警官说这个年轻人试图拒付费用。',
     options: ['A．avoid', 'B．reject', 'C．refuse', 'D．neglect'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 16,
@@ -110,6 +125,7 @@ export default [
     translate: '我想打电话给他，但总是占线。',
     options: ['A．Over', 'B．into', 'C．away', 'D．through'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 17,
@@ -117,6 +133,7 @@ export default [
     translate: '我多年没见他，但在电话里听出了他的声音。',
     options: ['A．realized', 'B．recognized', 'C．discovered', 'D．heard'],
     answer: 'B',
+    momentous: true,
   },
   {
     id: 18,
@@ -124,6 +141,7 @@ export default [
     translate: '她不知道未来在她私人生活中会发生什么事。',
     options: ['A．that', 'B．it', 'C．this', 'D．what'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 19,
@@ -131,6 +149,7 @@ export default [
     translate: '温度越高，液体蒸发得越快。',
     options: ['A．the faster', 'B．the more fast', 'C．the slower', 'D．the more slower'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 20,
@@ -138,6 +157,7 @@ export default [
     translate: '澳大利亚是少数几个沿左侧开车的国家之一。',
     options: ['A．which', 'B．that', 'C．where', 'D．on which'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 21,
@@ -145,6 +165,7 @@ export default [
     translate: 'Mike 比 Peter 更擅长游泳。',
     options: ['A．for', 'B．at', 'C．on', 'D．in'],
     answer: 'B',
+    momentous: true,
   },
   {
     id: 22,
@@ -152,6 +173,7 @@ export default [
     translate: '那个正朝我们走来的年轻女子肯定是我们的英语老师；她走路的样子就告诉我们了',
     options: ['A．must be', 'B．can be', 'C．would be', 'D．could be'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 23,
@@ -159,6 +181,7 @@ export default [
     translate: '尽管鸡蛋营养丰富，但它含有大量的脂肪。',
     options: ['A．a large number of', 'B．the large number', 'C．a large number', 'D．the large amount'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 24,
@@ -166,6 +189,7 @@ export default [
     translate: '约翰和他父亲都没能早点起来赶上早班火车。',
     options: ['A．nor', 'B．or', 'C．but', 'D．And'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 25,
@@ -173,6 +197,7 @@ export default [
     translate: '简的裙子和她妹妹的在设计上很相似。',
     options: ['A．like', 'B．with', 'C．to', 'D．As'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 26,
@@ -180,6 +205,7 @@ export default [
     translate: '尽管我告诉他我住在附近，他任执意开车送我回家。',
     options: ['A．insisted to', 'B．insisted at', 'C．insisted that', 'D．insisted in'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 27,
@@ -187,6 +213,7 @@ export default [
     translate: '我们最终得出的结论是她一直以来都在撒谎。',
     options: ['A．of', 'B．into', 'C．to', 'D．at'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 28,
@@ -194,6 +221,7 @@ export default [
     translate: '下次我不会犯同样的错误了。',
     options: ['A．like', 'B．same', 'C．near', 'D．similar'],
     answer: 'B',
+    momentous: true,
   },
   {
     id: 29,
@@ -201,6 +229,7 @@ export default [
     translate: '他仍然住在他出生的那间房子里。',
     options: ['A．already', 'B．yet', 'C．still', 'D．ever'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 30,
@@ -208,6 +237,7 @@ export default [
     translate: '我不习惯于当众演讲。',
     options: ['A．in', 'B．at', 'C．on', 'D．To'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 31,
@@ -215,6 +245,7 @@ export default [
     translate: '我一直盼望着收到父母的来信。',
     options: ['A．hear', 'B．being heard', 'C．be heard', 'D．Hearing'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 32,
@@ -222,6 +253,7 @@ export default [
     translate: '经理不准我们用他的车。',
     options: ['A．have', 'B．let', 'C．agree', 'D．Allow'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 33,
@@ -229,6 +261,7 @@ export default [
     translate: '留心观察，然后照她的样子做。',
     options: ['A．Mind', 'B．See', 'C．Stare at', 'D．Watch'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 34,
@@ -236,6 +269,7 @@ export default [
     translate: '你愿意帮我这个忙吗？',
     options: ['A．do', 'B．make', 'C．bring', 'D．Give'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 35,
@@ -243,6 +277,7 @@ export default [
     translate: '对你来说在禁止吸烟的公共场所吸烟是一个坏的举止行为。',
     options: ['A．behavior', 'B．action', 'C．manner', 'D．Movement'],
     answer: 'A',
+    momentous: true,
   },
   {
     id: 36,
@@ -250,6 +285,7 @@ export default [
     translate: '我再大学里学会了照相，现在对我很有用。',
     options: ['A．it', 'B．which', 'C．that', 'D．what'],
     answer: 'B',
+    momentous: true,
   },
   {
     id: 37,
@@ -257,6 +293,7 @@ export default [
     translate: '一般一个成功的律师一天要接待好几个委托人。',
     options: ['A．customers', 'B．supporters', 'C．guests', 'D．clients'],
     answer: 'D',
+    momentous: true,
   },
   {
     id: 38,
@@ -264,6 +301,7 @@ export default [
     translate: '到伯明翰的火车票多少钱？',
     options: ['A．fee', 'B．tip', 'C．fare', 'D．cost'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 39,
@@ -271,6 +309,7 @@ export default [
     translate: '鲍勃，你不该那样浪费时间；你今晚得完成学校的作业。',
     options: ['A．cut', 'B．do', 'C．kill', 'D．kick'],
     answer: 'C',
+    momentous: true,
   },
   {
     id: 40,
@@ -278,5 +317,166 @@ export default [
     translate: '我想，这些孩子和他们的父母都是英格兰人。从他们的口音我可以知道。',
     options: ['A．is', 'B．been', 'C．are', 'D．Was'],
     answer: 'C',
+    momentous: true,
+  },
+  {
+    id: 41,
+    question: 'Sunday is the day ____ people usually don‘t go to work.',
+    translate: '星期天是人们通常不上班的日子。',
+    options: ['A．when', 'B．which', 'C．in which', 'D．that'],
+    answer: 'A',
+    momentous: true,
+  },
+  {
+    id: 42,
+    question: '____ you know, David has been well lately.',
+    translate: '正如你所知，大卫最近身体很好。',
+    options: ['A．Which', 'B．As', 'C．What', 'D．When'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 43,
+    question: 'The harder you study, ____ you will learn.',
+    translate: '你学习越努力，学到的东西越多。',
+    options: ['A．much', 'B．many', 'C．the more', 'D．much more'],
+    answer: 'C',
+    momentous: true,
+  },
+  {
+    id: 44,
+    question: 'They got there an hour ____ than the others.',
+    translate: '他们比别人早到一小时。',
+    options: ['A．early', 'B．much early', 'C．more early', 'D．earlier'],
+    answer: 'D',
+    momentous: true,
+  },
+  {
+    id: 45,
+    question: 'The grey building is the place where the workers live, and the white building is the place where the spare parts ____.',
+    translate: '灰色建筑是工人们住的地方，白色建筑是生产零部件的地方。',
+    options: ['A．are producing', 'B．are produced', 'C．produced', 'D．being produced'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 46,
+    question: 'She is not only my classmate ____ also my good friend.',
+    translate: '她不仅是我的同班同学，还是我的好朋友。',
+    options: ['A．or', 'B．but', 'C．and', 'D．too'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 47,
+    question: 'He asked the waiter ____ the bill.',
+    translate: '他向服务员要账单。',
+    options: ['A．on', 'B．of', 'C．for', 'D．After'],
+    answer: 'C',
+    momentous: true,
+  },
+  {
+    id: 48,
+    question: 'When Lily came home at 5 p.m. yesterday, her mother ____ dinner in the kitchen.',
+    translate: '莉莉昨天五点钟回家时，她妈妈正在厨房里做晚饭。',
+    options: ['A．cooked', 'B．was cooking', 'C．cooks', 'D．has cooked'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 49,
+    question: 'Did you notice the guy ____ head looked like a big potato?',
+    translate: '你注意到了那个脑袋看上去像个大土豆的家伙了吗？',
+    options: ['A．who', 'B．which', 'C．whose', 'D．whom'],
+    answer: 'C',
+    momentous: true,
+  },
+  {
+    id: 50,
+    question: 'I don’t know the park, but it‘s ____ to be quite beautiful.',
+    translate: '我不了解这公园，但据说很美。',
+    options: ['A．said', 'B．old', 'C．spoken', 'D．talked'],
+    answer: 'A',
+    momentous: true,
+  },
+  {
+    id: 51,
+    question: 'His salary as a driver is much higher than _____.',
+    translate: '他当司机的薪水比当搬运工的薪水要高的多。',
+    options: ['A．a porter', 'B．is a porter', 'C．as a porter', 'D．that of a porter'],
+    answer: 'D',
+    momentous: true,
+  },
+  {
+    id: 52,
+    question: 'Write to me when you get home. OK, I ____.',
+    translate: '-到家后给我写信。 -好的，我会的。',
+    options: ['A．must', 'B．should', 'C．will', 'D．can'],
+    answer: 'C',
+    momentous: true,
+  },
+  {
+    id: 53,
+    question: 'Tom is so talkative. I’m sure you‘ll soon get tired ____ him.',
+    translate: '汤姆那么爱讲话，我肯定你很快就会讨厌他。',
+    options: ['A．of', 'B．with', 'C．at', 'D．on'],
+    answer: 'A',
+    momentous: true,
+  },
+  {
+    id: 54,
+    question: 'I don’t know ____ to deal with such matter.',
+    translate: '我不知道如何处理这类问题。',
+    options: ['A．what', 'B．how', 'C．which', 'D．/'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 55,
+    question: '____ is your girl friend like? She is very kind and good-looking.',
+    translate: '-你女朋友是怎样的一个人？ -她很善良，也很漂亮。',
+    options: ['A．How', 'B．What', 'C．Which', 'D．Who'],
+    answer: 'B',
+    momentous: true,
+  },
+  {
+    id: 56,
+    question: 'Compared with last year, the output of the factory this year has increased ____ 20%.',
+    translate: '与去年相比，今年的产量增加了20%。',
+    options: ['A．with', 'B．at', 'C．for', 'D．by'],
+    answer: 'D',
+    momentous: false,
+  },
+  {
+    id: 57,
+    question: 'I often see ____ the road on his way home.',
+    translate: '我经常看见他在回家的路上穿过那条马路。',
+    options: ['A．he cross', 'B．him cross', 'C．him crossed', 'D．he crossing'],
+    answer: 'B',
+    momentous: false,
+  },
+  {
+    id: 58,
+    question: '"Let me ____ you," said my boss, "you should call me immediately after you arrive at the airport".',
+    translate: '“我提醒你，”我的老板说，“你到达机场后应该立即打电话给我。”',
+    options: ['A．ask', 'B．advise', 'C．remember', 'D．remind'],
+    answer: 'D',
+    momentous: false,
+  },
+  {
+    id: 59,
+    question: 'Not until the meeting was over ____ that he had made a mistake in his speech.',
+    translate: '直到会议结束他才意识到他在讲话中犯了一个错误。',
+    options: ['A．he realized', 'B．did he realize', 'C．he has realized', 'D．has he realized'],
+    answer: 'B',
+    momentous: false,
+  },
+  {
+    id: 60,
+    question: 'Once environmental damage ____, it takes many years for the system to recover.',
+    translate: '环境一旦被破坏，需要很多年才能恢复过来。',
+    options: ['A．is to do', 'B．does', 'C．had done', 'D．is done'],
+    answer: 'D',
+    momentous: false,
   },
 ];
