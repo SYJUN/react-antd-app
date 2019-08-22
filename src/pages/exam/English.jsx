@@ -6,7 +6,7 @@ import find from 'lodash/find';
 import forEach from 'lodash/forEach';
 import assign from 'lodash/assign';
 
-import { Button, Input } from 'antd';
+import { Button, Input, Collapse } from 'antd';
 import Item from '../../containers/exam/Item';
 import SubmitPanel from '../../containers/exam/SubmitPanel';
 
@@ -130,8 +130,15 @@ export default class English extends React.PureComponent {
                     {item.data.map(question => {
                       return (
                         <div key={question.questionNum}>
-                          {question.questionNum}、{question.question}
-                          
+                          <Collapse bordered={false}>
+                            <Collapse.Panel
+                              key="1"
+                              showArrow={false}
+                              header={`${question.questionNum}、${question.question}`}
+                            >
+                              <span>{question.answer}</span>
+                            </Collapse.Panel>
+                          </Collapse>
                           <div>
                             <Input type="text" />
                           </div>
