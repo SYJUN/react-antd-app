@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import find from 'lodash/find';
 import forEach from 'lodash/forEach';
@@ -8,6 +9,9 @@ import assign from 'lodash/assign';
 import { Button, Input } from 'antd';
 import Item from '../../containers/exam/Item';
 import SubmitPanel from '../../containers/exam/SubmitPanel';
+
+// actions
+import { getExamDataAction, refreshExamDataAction, submitExamAction } from '../../actions/exam';
 
 // dbs
 import englishDB from '@public/db/english_B';
@@ -25,27 +29,39 @@ const Title = styled.div`
   font-size: 16px;
 `;
 
+@connect(state => ({ list: state.exam }), { getExamDataAction, refreshExamDataAction, submitExamAction })
 export default class English extends React.PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    list: PropTypes.array,
+    getExamDataAction: PropTypes.func.isRequired,
+    refreshExamDataAction: PropTypes.func.isRequired,
+    submitExamAction: PropTypes.func.isRequired,
+  };
 
-  static defaultProps = {};
+  static defaultProps = {
+    list: [],
+  };
 
   state = {
     visible: false,
   };
-
-  list = englishDB.data ? englishDB.data : [];
 
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    console.log('this.list: ', this.list);
+    this.props.getExamDataAction({
+      list: englishDB,
+      limits: [
+        { name: 'vocabulary_english', maxCount: 15 },
+        { name: 'english_chinese_translation', maxCount: 10 },
+      ],
+    });
   }
 
   onChoice = (result) => {
-    const findCategory = find(this.list, o => o.name === result.name);
+    const findCategory = find(this.props.list, o => o.name === result.name);
     if (findCategory) {
       forEach(findCategory.data, o => {
         if (o.id === result.id) {
@@ -56,8 +72,18 @@ export default class English extends React.PureComponent {
   };
 
   onSubmit = () => {
-    console.log('submit list: ', this.list);
+    this.props.submitExamAction(this.props.list);
     this.setState({ visible: true });
+  };
+
+  onRefresh = () => {
+    this.props.refreshExamDataAction({
+      list: englishDB,
+      limits: [
+        { name: 'vocabulary_english', maxCount: 15 },
+        { name: 'english_chinese_translation', maxCount: 10 },
+      ],
+    });
   };
 
   handleSubmitPanelOk = bool => {
@@ -65,13 +91,18 @@ export default class English extends React.PureComponent {
   };
 
   render() {
+    const { list } = this.props;
+
     return (
       <Wrapper>
         <div>
-          <Button type="primary" onClick={this.onSubmit}>交卷</Button>
+          <Button.Group>
+            <Button type="primary" onClick={this.onSubmit}>交卷</Button>
+            <Button type="primary" onClick={this.onRefresh}>刷新</Button>
+          </Button.Group>
         </div>
         <div>
-          {this.list.map((item, idx) => {
+          {list.map((item, idx) => {
             if (item.type === 'choice') {
               return (
                 <div key={idx}>
@@ -115,7 +146,7 @@ export default class English extends React.PureComponent {
             return null;
           })}
         </div>
-        <SubmitPanel list={this.list} visible={this.state.visible} onOk={this.handleSubmitPanelOk} />
+        <SubmitPanel list={list} visible={this.state.visible} onOk={this.handleSubmitPanelOk} />
       </Wrapper>
     );
   }

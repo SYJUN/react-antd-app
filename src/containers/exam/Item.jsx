@@ -28,12 +28,20 @@ export default class Item extends React.PureComponent {
 
   state = {
     value: '',
+    options: this.props.data.options ? this.props.data.options : [],
   };
 
   constructor(props) {
     super(props);
+  }
 
-    this.options = this.props.data.options ? this.props.data.options : [];
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.data !== this.props.data) {
+      this.setState({
+        value: this.props.data.selectValue,
+        options: [...this.props.data.options],
+      });
+    }
   }
 
   onChange = (data) => (e) => {
@@ -52,10 +60,10 @@ export default class Item extends React.PureComponent {
 
     return (
       <Wrapper>
-        <div>{questionNum}. {data.question}</div>
+        <div><span style={{ color: data.momentous ? '#f00' : '' }}>{questionNum}</span>. {data.question}</div>
         <OptionStyle>
           <Radio.Group onChange={this.onChange(data)} value={this.state.value}>
-            {this.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
+            {this.state.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
           </Radio.Group>
         </OptionStyle>
       </Wrapper>

@@ -149,4 +149,105 @@ export default [
     question: 'People all over the world are trying to help the people in the quake-stricken areas.',
     answer: '全世界人民都在努力帮助地震灾区的人民。',
   },
+  {
+    id: 31,
+    question: 'The traffic jams during morning and afternoons rush hours are a headache in big cities now.',
+    answer: '上下班高峰期的交通拥堵问题是大城市目前的一个棘手问题。',
+  },
+  {
+    id: 32,
+    question: 'Various substances differ widely in their magnetic characteristics.',
+    answer: '各种材料的磁性有很大的不同。',
+  },
+  {
+    id: 33,
+    question: 'We should encourage him to have confidence in himself.',
+    answer: '我们应当鼓励他对自己要有信心。',
+  },
+  {
+    id: 34,
+    question: 'What kind of life do most people enjoy?',
+    answer: '多数人喜欢什么样的生活？',
+  },
+  {
+    id: 35,
+    question: 'Who can help me clean the room?',
+    answer: '谁能帮我打扫房间？',
+  },
+  {
+    id: 36,
+    question: 'Would you mind closing the window for me?',
+    answer: '能帮我关一下窗户吗？',
+  },
+  {
+    id: 37,
+    question: 'Would you please help me with this heavy box?',
+    answer: '你能帮我抬一下这个很沉的箱子吗？',
+  },
+  {
+    id: 38,
+    question: 'You needn‘t go there anymore. He already knows about it.',
+    answer: '你不必去了，他已经知道那件事了。',
+  },
+  {
+    id: 39,
+    question: 'You’d better do that again.',
+    answer: '你最好再做一遍。',
+  },
+  {
+    id: 40,
+    question: 'There is a large amount of energy wasted due to friction.',
+    answer: '由于摩擦而损耗了大量的能量。',
+  },
+  {
+    id: 41,
+    question: 'They thought that there must be something wrong with their TV set.',
+    answer: '他们认为电视机一定出了毛病。',
+  },
+  {
+    id: 42,
+    question: 'This box can hold more books than that one.',
+    answer: '这个箱子比那个箱子能装更多的书。',
+  },
+  {
+    id: 43,
+    question: 'This place has plentiful material resources.',
+    answer: '这个地方有丰富的物质资源。',
+  },
+  {
+    id: 44,
+    question: 'Transistors are small in size and light in weight.',
+    answer: '晶体管的体积小，重量轻。',
+  },
+  {
+    id: 45,
+    question: 'Trees need water to grow.',
+    answer: '树木有水才能生长。',
+  },
+
+  {
+    id: 46,
+    question: 'Your composition is well written, but there‘s still some room for improvement.',
+    answer: '你的作文很不错，但是还有改进的余地。',
+  },
+  {
+    id: 47,
+    question: 'Young persons under twenty-five make up nearly half of the American population.',
+    answer: '25岁以下的年轻人几乎占了美国人口的一半。',
+  },
+  {
+    id: 48,
+    question: 'You’ll find in English some words can be remembered more easily than the others.',
+    answer: '你会发现英语里有些词比别的词容易记忆。',
+  },
+  {
+    id: 49,
+    question: 'You should look around before you cross the street.',
+    answer: '在过马路之前，你应该向四周看看。',
+  },
+  {
+    id: 50,
+    question: 'You ought not to smoke so much.',
+    answer: '你不应该抽这么多的烟。',
+  },
 ];
