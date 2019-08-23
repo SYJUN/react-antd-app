@@ -25,14 +25,14 @@ const setExtraKey = (data) => {
 };
 
 const getFilterDataByHits = (data, maxCount = 15, isRefresh) => {
+  _.forEach(data, item => {
+    delete item.isRight;
+    delete item.selectValue;
+    delete item.name;
+    delete item.title;
+  });
   let filterList = [...data];
   if (isRefresh) {
-    _.forEach(data, item => {
-      delete item.isRight;
-      delete item.selectValue;
-      delete item.name;
-      delete item.title;
-    });
     filterList = _.filter(data, o => o.hits === 0);
   }
 

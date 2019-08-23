@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import assign from 'lodash/assign';
+import * as _ from 'lodash';
 
 import { Radio } from 'antd';
 
@@ -14,6 +14,10 @@ const OptionStyle = styled.div`
   width: 100%;
   padding: 6px 12px;
   box-sizing: border-box;
+`;
+
+const QuestionTitleStyle = styled.div`
+  color: ${props => props.red ? '#f00' : ''};
 `;
 
 export default class Item extends React.PureComponent {
@@ -51,7 +55,7 @@ export default class Item extends React.PureComponent {
     this.setState({ value });
 
     if (onChoice) {
-      onChoice(assign(data, { isRight: data.answer === value, selectValue: value, name: parent.name, title: parent.title }));
+      onChoice(_.assign(data, { isRight: data.answer === value, selectValue: value, name: parent.name, title: parent.title }));
     }
   };
 
@@ -60,7 +64,9 @@ export default class Item extends React.PureComponent {
 
     return (
       <Wrapper>
-        <div><span style={{ color: data.momentous ? '#f00' : '' }}>{questionNum}</span>. {data.question}</div>
+        <QuestionTitleStyle red={data.selectValue && !data.isRight}>
+          <span style={{ color: data.momentous ? '#f00' : '' }}>{questionNum}</span>. {data.question}
+        </QuestionTitleStyle>
         <OptionStyle>
           <Radio.Group onChange={this.onChange(data)} value={this.state.value}>
             {this.state.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
