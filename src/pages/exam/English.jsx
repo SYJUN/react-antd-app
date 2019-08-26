@@ -112,6 +112,7 @@ export default class English extends React.PureComponent {
                       return (
                         <Item
                           key={question.questionNum}
+                          enableTranslate
                           parent={item}
                           data={question}
                           questionNum={question.questionNum}
