@@ -96,7 +96,7 @@ export default [
   },
   {
     id: 20,
-    question: 'Both ann and Mary are suitable for the job.',
+    question: 'Both Ann and Mary are suitable for the job.',
     answer: '安妮和玛丽都适合干这个工作。',
   },
   {

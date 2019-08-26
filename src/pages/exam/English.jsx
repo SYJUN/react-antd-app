@@ -6,9 +6,10 @@ import find from 'lodash/find';
 import forEach from 'lodash/forEach';
 import assign from 'lodash/assign';
 
-import { Button, Input, Collapse } from 'antd';
+import { Button, Collapse } from 'antd';
 import Item from '../../containers/exam/Item';
 import SubmitPanel from '../../containers/exam/SubmitPanel';
+import ExamInput from '../../containers/exam/Input';
 
 // actions
 import { getExamDataAction, refreshExamDataAction, submitExamAction } from '../../actions/exam';
@@ -43,6 +44,7 @@ export default class English extends React.PureComponent {
   };
 
   state = {
+    isRefresh: false,
     visible: false,
   };
 
@@ -77,6 +79,7 @@ export default class English extends React.PureComponent {
   };
 
   onRefresh = () => {
+    this.setState({ isRefresh: true });
     this.props.refreshExamDataAction({
       list: englishDB,
       limits: [
@@ -88,6 +91,10 @@ export default class English extends React.PureComponent {
 
   handleSubmitPanelOk = bool => {
     this.setState({ visible: bool });
+  };
+
+  onInputChange = () => {
+    this.setState({ isRefresh: false });
   };
 
   render() {
@@ -140,9 +147,7 @@ export default class English extends React.PureComponent {
                               <span>{question.answer}</span>
                             </Collapse.Panel>
                           </Collapse>
-                          <div>
-                            <Input type="text" />
-                          </div>
+                          <ExamInput isRefresh={this.state.isRefresh} onChange={this.onInputChange} />
                         </div>
                       );
                     })}
