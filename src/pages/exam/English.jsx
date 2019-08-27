@@ -93,7 +93,10 @@ export default class English extends React.PureComponent {
     this.setState({ visible: bool });
   };
 
-  onInputChange = () => {
+  onInputChange = data => (result) => {
+    if (result) {
+      data.isWrite = true;
+    }
     this.setState({ isRefresh: false });
   };
 
@@ -147,7 +150,7 @@ export default class English extends React.PureComponent {
                               <span>{question.answer}</span>
                             </Collapse.Panel>
                           </Collapse>
-                          <ExamInput isRefresh={this.state.isRefresh} onChange={this.onInputChange} />
+                          <ExamInput isRefresh={this.state.isRefresh} onChange={this.onInputChange(question)} />
                         </div>
                       );
                     })}

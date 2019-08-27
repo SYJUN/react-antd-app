@@ -26,6 +26,7 @@ const setExtraKey = (data) => {
 
 const getFilterDataByHits = (data, maxCount = 15, isRefresh) => {
   _.forEach(data, item => {
+    delete item.isWrite;
     delete item.isRight;
     delete item.selectValue;
     delete item.name;
@@ -61,7 +62,7 @@ const getRandomData = (data, maxCount = 15) => {
 const handleSubmit = (data) => {
   if (!data) return [];
   return data.map(item => {
-    if (!_.isUndefined(item.isRight)) {
+    if (!_.isUndefined(item.isRight) || !_.isUndefined(item.isWrite)) {
       item.hits += 1;
     }
     return item;

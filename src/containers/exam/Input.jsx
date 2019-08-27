@@ -34,7 +34,7 @@ export default class ExamInput extends React.PureComponent {
     const value = e.target.value;
     this.setState({ value: value.trim() });
     if (value.trim()) {
-      this.props.onChange();
+      this.props.onChange(value);
     }
   };
 
