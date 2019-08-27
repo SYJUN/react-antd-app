@@ -1428,7 +1428,7 @@ export default [
   {
     id: 285,
     question: 'Beijing Olympic Games can make Chinese people work harder?',
-    answer: '北京奥利匹克运动会是的中国人们更加努力工作?',
+    answer: '北京奥利匹克运动会使得中国人们更加努力工作?',
   },
   {
     id: 286,
