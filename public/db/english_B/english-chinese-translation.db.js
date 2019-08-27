@@ -267,7 +267,7 @@ export default [
   },
   {
     id: 54,
-    question: 'Year,but they play the same songs over and over angain.',
+    question: 'Year,but they play the same songs over and over again.',
     answer: '没错，我们总重复播放同一首歌。',
   },
   {
@@ -301,7 +301,7 @@ export default [
   },
   {
     id: 61,
-    question: 'When she got home that envening,she would her husband the beautiful hat she had bought.',
+    question: 'When she got home that evening,she would her husband the beautiful hat she had bought.',
     answer: '那天傍晚她回家后，给丈夫看她买的那顶漂亮的帽子。',
   },
   {
@@ -507,7 +507,7 @@ export default [
   },
   {
     id: 102,
-    question: 'The teacher came carlier than expected(顶期).',
+    question: 'The teacher came earlier than expected(顶期).',
     answer: '老师来得比预期的早',
   },
   {
@@ -563,7 +563,7 @@ export default [
   },
   {
     id: 113,
-    question: 'The moon looks much bigger than any other statrs in the sky.',
+    question: 'The moon looks much bigger than any other stars in the sky.',
     answer: '月亮看起来比天空中的任何其他的星星都要大的多。',
   },
   {
@@ -618,7 +618,7 @@ export default [
   },
   {
     id: 124,
-    question: 'The best time to read English is in the moming.',
+    question: 'The best time to read English is in the morning.',
     answer: '朗读英语的最佳时间是在早晨',
   },
   {
@@ -638,7 +638,7 @@ export default [
   },
   {
     id: 128,
-    question: 'Students can study by themselves through schoolnetwo.',
+    question: 'Students can study by themselves through school network.',
     answer: '学生可以通过学校网络自学',
   },
   {
@@ -678,7 +678,7 @@ export default [
   },
   {
     id: 136,
-    question: 'She begins cookingg as soon as she gets home.',
+    question: 'She begins cooking as soon as she gets home.',
     answer: '她每天一到家就开始做饭。',
   },
   {
@@ -698,7 +698,7 @@ export default [
   },
   {
     id: 140,
-    question: 'Please ring me up tomorrow moming.',
+    question: 'Please ring me up tomorrow morning.',
     answer: '请在明天早上给我打电话',
   },
   {
@@ -1058,7 +1058,7 @@ export default [
     answer: '我想明天她就会改变主意',
   }, {
     id: 212,
-    question: 'I think our dream will become tme',
+    question: 'I think our dream will become true',
     answer: '我认为我们的梦想将成为现实。',
   },
 
@@ -1070,7 +1070,7 @@ export default [
   {
     id: 214,
     question: 'I prefer tea to coffee.',
-    answer: '我宁可要茶,不要咖啡',
+    answer: '比起咖啡，我更喜欢茶',
   },
   {
     id: 215,
@@ -1084,7 +1084,7 @@ export default [
   },
   {
     id: 217,
-    question: 'I ocked on his door but nobody came to answer it.',
+    question: 'I knocked on his door but nobody came to answer it.',
     answer: '我敲了他的门,但没人来开门',
   },
   {
@@ -1249,7 +1249,7 @@ export default [
   {
     id: 249,
     question: 'He is the only Chinese who has ever won the award.',
-    answer: '他是一获得过这个荣誉的中国人。',
+    answer: '他是唯一一个获得该奖项的中国人。',
   },
 
   {
@@ -1260,12 +1260,12 @@ export default [
   {
     id: 251,
     question: 'He is always making excuses for being late.',
-    answer: '他总是为他的迟到找借曰',
+    answer: '他总是为他的迟到找借口',
   },
   {
     id: 252,
     question: 'He has the habit of making notes while reading.',
-    answer: '有阅读时记笔记的习惯',
+    answer: '他有阅读时记笔记的习惯',
   },
   {
     id: 253,
@@ -1336,7 +1336,7 @@ export default [
 
   {
     id: 266,
-    question: 'Everyone was in bedexcept.',
+    question: 'Everyone was in bed except me.',
     answer: '除了我,所有人都上床睡觉了',
   },
   {
@@ -1376,7 +1376,7 @@ export default [
   },
   {
     id: 274,
-    question: 'Do you still have anything that you don’ t understand?',
+    question: 'Do you still have anything that you don’t understand?',
     answer: '还有什么不能明白的事情吗?',
   },
   {
@@ -1391,7 +1391,7 @@ export default [
   },
   {
     id: 277,
-    question: 'Do you have access to the Interne?',
+    question: 'Do you have access to the Internet?',
     answer: '你能上网吗?',
   },
   {
@@ -1416,7 +1416,7 @@ export default [
   },
   {
     id: 282,
-    question: 'Can i download this material without paying any money?',
+    question: 'Can I download this material without paying any money?',
     answer: '我可以免费下载这个材料吗?',
   },
   {
@@ -1462,12 +1462,12 @@ export default [
   },
   {
     id: 291,
-    question: 'About half of teh fruitis ripe',
+    question: 'About half of the fruit is ripe',
     answer: '大约有一般的水果已经成熟了',
   },
   {
     id: 292,
-    question: 'A  teacher should ave patience in his work',
+    question: 'A  teacher should have patience in his work',
     answer: '当老师应当有耐心',
   },
   {
