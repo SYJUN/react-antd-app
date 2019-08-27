@@ -1423,7 +1423,7 @@ export default [
   {
     id: 284,
     question: 'But competitive swimming is just over one hundred years old',
-    answer: '但是游泳比赛只有三百多年的历史?',
+    answer: '但是游泳比赛只有一百多年的历史。',
   },
   {
     id: 285,
