@@ -341,7 +341,7 @@ export default [
   },
   {
     id: 69,
-    question: 'We"re running behind schedule by about I5 minutes.',
+    question: 'We’re running behind schedule by about 15 minutes.',
     answer: '我们大约误点十五分钟',
   },
   {
@@ -357,7 +357,7 @@ export default [
   {
     id: 72,
     question: 'We should keep it in mind that our country is a developing one',
-    answer: '我们应记在心,我国是一个发展中的国家',
+    answer: '我们应牢记在心,我国是一个发展中的国家',
   },
   {
     id: 73,
@@ -376,7 +376,7 @@ export default [
   },
   {
     id: 76,
-    question: 'We cannot tell when an earthquake is coming.',
+    question: 'We can not tell when an earthquake is coming.',
     answer: '我们不能预知地震什么时候来临。',
   },
   {
@@ -396,13 +396,13 @@ export default [
   },
   {
     id: 80,
-    question: 'We all like her because she"s very helpful.',
+    question: 'We all like her because she‘s very helpful.',
     answer: '我们都喜欢她,因为她乐于助人',
   },
   {
     id: 81,
     question: 'Wang Li’s(人名有可能变化) father has taught English here since he graduated from Peking University.',
-    answer: '王丽的父亲从北京大学毕业后就直在这里教英语。',
+    answer: '王丽的父亲从北京大学毕业后就一直在这里教英语。',
   },
   {
     id: 82,
@@ -416,7 +416,7 @@ export default [
   },
   {
     id: 84,
-    question: 'Tom likes playing basket-ball but he can,’t play well.',
+    question: 'Tom likes playing basket-ball but he can’t play well.',
     answer: '汤姆喜欢打篮球,但他打得不好',
   },
   {
@@ -431,17 +431,17 @@ export default [
   },
   {
     id: 87,
-    question: 'This Tv channel has too many commercials.',
+    question: 'This TV channel has too many commercials.',
     answer: '这个电视台频道广告太多了',
   },
   {
     id: 88,
-    question: 'This pair of shoes cost me260yuan.',
-    answer: '你可以在里这双鞋花了我260元钱面买水喝。',
+    question: 'This pair of shoes cost me 260 yuan.',
+    answer: '这双鞋花了我260元钱。',
   },
   {
     id: 89,
-    question: 'This one‘ s pretty, but it costs too much.',
+    question: 'This one‘s pretty, but it costs too much.',
     answer: '这个很漂亮,但是很贵',
   },
   {
@@ -532,7 +532,7 @@ export default [
   },
   {
     id: 107,
-    question: 'The people s Republic of China(PRC), founded on October 1, 1949, covers an area of 9.6million square kilometer.',
+    question: 'The people’s Republic of China(PRC), founded on October 1, 1949, covers an area of 9.6 million square kilometer.',
     answer: '中华人民共和国成立于1949年10月1日,国土面积约960万平方公里。',
   },
   {
@@ -553,8 +553,8 @@ export default [
 
   {
     id: 111,
-    question: 'The more moeny I make,the happier I will be.',
-    answer: '赚的钱多，我就会越快乐。',
+    question: 'The more money I make,the happier I will be.',
+    answer: '赚的钱越多，我就会越快乐。',
   },
   {
     id: 112,
@@ -568,7 +568,7 @@ export default [
   },
   {
     id: 114,
-    question: 'The man-made satellite(卫星) made by China is working very we.',
+    question: 'The man-made satellite(卫星) made by China is working very well.',
     answer: '中国制造的人造卫星运行良好',
   },
   {
@@ -578,7 +578,7 @@ export default [
   },
   {
     id: 116,
-    question: 'The jury(审团) was composed of eight white people and four black people',
+    question: 'The jury(陪审团) was composed of eight white people and four black people',
     answer: '审团由八位白人和四位黑人组成',
   },
   {
@@ -609,7 +609,7 @@ export default [
   {
     id: 122,
     question: 'The doctor had no choice but reach out to their colleagues across the nation.',
-    answer: '那个医生别无选择,只能想全国的同行求助',
+    answer: '那个医生别无选择,只能向全国的同行求助',
   },
   {
     id: 123,
@@ -718,7 +718,7 @@ export default [
   },
   {
     id: 144,
-    question: 'People usually hate mice,but one mpuse won the hearts of the people all over the world.',
+    question: 'People usually hate mice,but one mouse won the hearts of the people all over the world.',
     answer: '人们通常憎恶老鼠，但这只老鼠却赢得了全世界人们的心。',
   },
   {
@@ -754,7 +754,7 @@ export default [
   {
     id: 151,
     question: 'Not until the child fell asleep did the mother leave the room.',
-    answer: '直到孩子睡着了,妈妈才离开房开房间',
+    answer: '直到孩子睡着了,妈妈才离开房间',
   },
   {
     id: 152,
@@ -793,7 +793,7 @@ export default [
   },
   {
     id: 159,
-    question: 'Lincoln was the US president who set the slaves free..',
+    question: 'Lincoln was the US president who set the slaves free.',
     answer: '林肯是解放黑奴的那位美国总统。',
   },
   {
@@ -823,7 +823,7 @@ export default [
   },
   {
     id: 165,
-    question: 'Just because you like, it doesn t mean I will.',
+    question: 'Just because you like, it doesn‘t mean I will.',
     answer: '你喜欢它,并不意味我也会喜欢',
   },
   {
@@ -863,7 +863,7 @@ export default [
   },
   {
     id: 173,
-    question: 'I’ve been so busy lately, I haven, t had time to call anybody.',
+    question: 'I’ve been so busy lately, I haven’t had time to call anybody.',
     answer: '最近我一直很忙都没有时间打电话给别人',
   },
   {
@@ -918,7 +918,7 @@ export default [
   },
   {
     id: 184,
-    question: 't is known to all that exercises are good for health.',
+    question: 'It is known to all that exercises are good for health.',
     answer: '众所周知,锻炼有益于健康',
   },
   {
@@ -959,7 +959,7 @@ export default [
   },
   {
     id: 192,
-    question: 'I’m thinking about visIt to Paris.',
+    question: 'I’m thinking about visit to Paris.',
     answer: '我在考虑去巴黎旅游',
   },
   {
@@ -1039,7 +1039,7 @@ export default [
   },
   {
     id: 208,
-    question: 'I was bom in the city which you visited last year.',
+    question: 'I was born in the city which you visited last year.',
     answer: '我就出生在你去年参观过的那个城市。',
   },
   {
@@ -1056,12 +1056,12 @@ export default [
     id: 211,
     question: 'I think she will change her mind tomorrow.',
     answer: '我想明天她就会改变主意',
-  }, {
+  },
+  {
     id: 212,
     question: 'I think our dream will become true',
     answer: '我认为我们的梦想将成为现实。',
   },
-
   {
     id: 213,
     question: 'I rang your house last night but your mother answered the phone.',
@@ -1070,7 +1070,7 @@ export default [
   {
     id: 214,
     question: 'I prefer tea to coffee.',
-    answer: '比起咖啡，我更喜欢茶',
+    answer: '我宁可要茶，不要咖啡',
   },
   {
     id: 215,
@@ -1109,7 +1109,7 @@ export default [
   },
   {
     id: 222,
-    question: 'have a pain in my back',
+    question: 'I have a pain in my back',
     answer: '我的背疼',
   },
   {
@@ -1119,7 +1119,7 @@ export default [
   },
   {
     id: 224,
-    question: 'I feel lonely without you',
+    question: 'I feel satisfied with my life',
     answer: '我对我的生活感到满意',
   },
   {
@@ -1156,8 +1156,6 @@ export default [
     question: 'I can’t go with you today because I‘m too busy.',
     answer: '我今天不能和你一块儿去,因为我太忙了',
   },
-
-
   {
     id: 232,
     question: 'I came back because of the rain.',
@@ -1173,7 +1171,6 @@ export default [
     question: 'I am wondering who broke the window.',
     answer: '我想知道是谁打坏了窗户',
   },
-
   {
     id: 235,
     question: 'I am very familiar with his name.',
@@ -1218,7 +1215,7 @@ export default [
   {
     id: 243,
     question: 'He tried many times to pass the examination, and in the end he succeeded.',
-    answer: '好多次他试图通试,最后他成功了',
+    answer: '好多次他试图通过考试,最后他成功了',
   },
   {
     id: 244,
@@ -1333,7 +1330,6 @@ export default [
     question: 'Failure is the mother of success.',
     answer: '失败乃成功之母',
   },
-
   {
     id: 266,
     question: 'Everyone was in bed except me.',
@@ -1386,8 +1382,8 @@ export default [
   },
   {
     id: 276,
-    question: 'Do you mind my smoking he.',
-    answer: '我这里吸烟,你介意吗?',
+    question: 'Do you mind my smoking here.',
+    answer: '我在这里吸烟,你介意吗?',
   },
   {
     id: 277,
@@ -1463,7 +1459,7 @@ export default [
   {
     id: 291,
     question: 'About half of the fruit is ripe',
-    answer: '大约有一般的水果已经成熟了',
+    answer: '大约有一半的水果已经成熟了',
   },
   {
     id: 292,
@@ -1479,5 +1475,15 @@ export default [
     id: 294,
     question: 'A dog is always well-known as a clever and friendly animal',
     answer: '众所周知，狗一直是聪明而友好的动物',
+  },
+  {
+    id: 295,
+    question: 'We are short of time and money.',
+    answer: '我资金和时间都缺。',
+  },
+  {
+    id: 296,
+    question: 'I save the baby and became a hero',
+    answer: '我因救了这个婴儿而成为了英雄。',
   },
 ];
