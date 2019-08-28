@@ -1423,12 +1423,12 @@ export default [
   {
     id: 284,
     question: 'But competitive swimming is just over one hundred years old',
-    answer: '但是游泳比赛只有三百多年的历史?',
+    answer: '但是游泳比赛只有一百多年的历史。',
   },
   {
     id: 285,
     question: 'Beijing Olympic Games can make Chinese people work harder?',
-    answer: '北京奥利匹克运动会是的中国人们更加努力工作?',
+    answer: '北京奥利匹克运动会使得中国人们更加努力工作?',
   },
   {
     id: 286,
