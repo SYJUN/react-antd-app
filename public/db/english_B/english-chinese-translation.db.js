@@ -814,7 +814,7 @@ export default [
   {
     id: 163,
     question: 'Let‘s sit over here until it’s time for you to board.',
-    answer: '我们就在这里坐到你上飞机的时间',
+    answer: '让我们坐在这里，直到你登机的时候。',
   },
   {
     id: 164,
@@ -964,7 +964,7 @@ export default [
   },
   {
     id: 193,
-    question: 'I‘m sure we’ll have a good time',
+    question: 'I‘m sure we’ll have a good time.',
     answer: '我相信我们会很开心的',
   },
   {
@@ -980,7 +980,7 @@ export default [
   {
     id: 196,
     question: 'I‘m going to visit a friend of mine this Sunday',
-    answer: '这个周日我计划去看我的一个朋友',
+    answer: '我本周日要拜访我的一个朋友',
   },
   {
     id: 197,
@@ -1004,8 +1004,8 @@ export default [
   },
   {
     id: 201,
-    question: 'I‘ll have to try using the search engines',
-    answer: '我得试着用这个搜索引擎',
+    question: 'I‘ll have to try using the search engines.',
+    answer: '我得试着用这个搜索引擎。',
   },
   {
     id: 202,
@@ -1020,22 +1020,22 @@ export default [
   {
     id: 204,
     question: 'I’ll be waiting for you at the library this time tomorrow.',
-    answer: '我明天这时候在图书馆等你',
+    answer: '我明天这时候在图书馆等你。',
   },
   {
     id: 205,
     question: 'I would appreciate it if you would just let me deal with this case.',
-    answer: '如果你能让我独自处理这桩案件,我将不胜感激',
+    answer: '如果你能让我独自处理这桩案件,我将不胜感激。',
   },
   {
     id: 206,
     question: 'I will finish reading this book in a week.',
-    answer: '我将在一周内读完这本书',
+    answer: '我将在一周内读完这本书。',
   },
   {
     id: 207,
     question: 'I was wondering if you could help me to find this book.',
-    answer: '我不知道你是否能帮助我找到那本',
+    answer: '我不知道你是否能帮助我找到那本。',
   },
   {
     id: 208,
@@ -1050,16 +1050,16 @@ export default [
   {
     id: 210,
     question: 'I think the picture shows us how fruits is necessary to life.',
-    answer: '我想这幅图是告诉我们水果是生活中不可缺的',
+    answer: '我想这幅图是告诉我们水果是生活中不可缺的。',
   },
   {
     id: 211,
     question: 'I think she will change her mind tomorrow.',
-    answer: '我想明天她就会改变主意',
+    answer: '我想明天她就会改变主意。',
   },
   {
     id: 212,
-    question: 'I think our dream will become true',
+    question: 'I think our dream will become true.',
     answer: '我认为我们的梦想将成为现实。',
   },
   {
@@ -1070,62 +1070,62 @@ export default [
   {
     id: 214,
     question: 'I prefer tea to coffee.',
-    answer: '我宁可要茶，不要咖啡',
+    answer: '我宁可要茶，不要咖啡。',
   },
   {
     id: 215,
     question: 'I need to buy some 50-cent stamps!',
-    answer: '我需要买市生50美分的邮票',
+    answer: '我需要买市生50美分的邮票！',
   },
   {
     id: 216,
-    question: 'I look forward to hearing from you',
-    answer: '我期待着收到您的回信',
+    question: 'I look forward to hearing from you.',
+    answer: '我期待着收到您的回信。',
   },
   {
     id: 217,
     question: 'I knocked on his door but nobody came to answer it.',
-    answer: '我敲了他的门,但没人来开门',
+    answer: '我敲了他的门,但没人来开门。',
   },
   {
     id: 218,
     question: 'I hope we can have some snow this winter.',
-    answer: '我希望今年冬天会下点雪',
+    answer: '我希望今年冬天会下点雪。',
   },
   {
     id: 219,
     question: 'I have something important to tell you.',
-    answer: '我有些重要事情要告诉你',
+    answer: '我有些重要事情要告诉你。',
   },
   {
     id: 220,
     question: 'I have no interest in what they say about me.',
-    answer: '我对别人怎么说我不感兴趣',
+    answer: '我对别人怎么说我不感兴趣。',
   },
   {
     id: 221,
     question: 'I have no idea what to say.',
-    answer: '我不知道说什么好',
+    answer: '我不知道说什么好。',
   },
   {
     id: 222,
     question: 'I have a pain in my back',
-    answer: '我的背疼',
+    answer: '我的背疼。',
   },
   {
     id: 223,
     question: 'I have no choice.',
-    answer: '我别无选择',
+    answer: '我别无选择。',
   },
   {
     id: 224,
-    question: 'I feel satisfied with my life',
-    answer: '我对我的生活感到满意',
+    question: 'I feel satisfied with my life.',
+    answer: '我对我的生活感到满意。',
   },
   {
     id: 225,
     question: 'I feel lonely without you.',
-    answer: '没有你我感到孤独',
+    answer: '没有你我感到孤独。',
   },
   {
     id: 226,
@@ -1139,7 +1139,7 @@ export default [
   }, {
     id: 228,
     question: 'I didn’t hear what you said to him.',
-    answer: '我没听见你对他说的是什么',
+    answer: '我没听见你对他说的是什么。',
   },
   {
     id: 229,
@@ -1154,7 +1154,7 @@ export default [
   {
     id: 231,
     question: 'I can’t go with you today because I‘m too busy.',
-    answer: '我今天不能和你一块儿去,因为我太忙了',
+    answer: '我今天不能和你一块儿去,因为我太忙了。',
   },
   {
     id: 232,
