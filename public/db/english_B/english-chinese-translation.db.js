@@ -462,7 +462,7 @@ export default [
   {
     id: 93,
     question: 'This custom has a long tradition.',
-    answer: '这一风俗历史悠久',
+    answer: '这个习俗有着悠久的传统',
   },
   {
     id: 94,
@@ -507,7 +507,7 @@ export default [
   },
   {
     id: 102,
-    question: 'The teacher came earlier than expected(顶期).',
+    question: 'The teacher came earlier than expected(预期).',
     answer: '老师来得比预期的早',
   },
   {
@@ -548,7 +548,7 @@ export default [
   {
     id: 110,
     question: 'The most common samples of inorganic materials are the gases of the atmosphere, water, rocks,etc.',
-    answer: '大气中的气体、水、岩石等都是无机物中最普通的实例',
+    answer: '最常见的无机材料样品是大气中的气体、水、岩石等',
   },
 
   {
@@ -669,7 +669,7 @@ export default [
   {
     id: 134,
     question: 'She is used to living in the countryside.',
-    answer: '她地惯住在乡下',
+    answer: '她习惯住在乡下',
   },
   {
     id: 135,
@@ -1025,7 +1025,7 @@ export default [
   {
     id: 205,
     question: 'I would appreciate it if you would just let me deal with this case.',
-    answer: '如果你能让我独自处理这桩案件,我将不胜感激。',
+    answer: '如果你能让我处理这个案子,我将不胜感激。',
   },
   {
     id: 206,
@@ -1035,7 +1035,7 @@ export default [
   {
     id: 207,
     question: 'I was wondering if you could help me to find this book.',
-    answer: '我不知道你是否能帮助我找到那本。',
+    answer: '我不知道你是否能帮助我找到这本书。',
   },
   {
     id: 208,
