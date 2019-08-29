@@ -1045,7 +1045,7 @@ export default [
   {
     id: 209,
     question: ' I used the bag to protect my face from the smoke and heat.',
-    answer: '我用包捂在脸上挡住烟和热。',
+    answer: '我用这个包来保护我的脸免受烟雾和热量的伤害。',
   },
   {
     id: 210,
