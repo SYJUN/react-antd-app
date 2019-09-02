@@ -1,4 +1,4 @@
-export default [
+const important = [
   {
     id: 1,
     question: 'She likes to help any one who is in difficulty',
@@ -224,7 +224,9 @@ export default [
     question: 'Trees need water to grow.',
     answer: '树木有水才能生长。',
   },
+];
 
+const unimportant = [
   {
     id: 46,
     question: 'Your composition is well written, but there‘s still some room for improvement.',
@@ -1164,7 +1166,7 @@ export default [
   {
     id: 233,
     question: 'I am writing this letter to complain about the service in your hotel.',
-    answer: '我写这封信的目的是要你们旅馆的服务。',
+    answer: '我写这封信是为了投诉你们酒店的服务。',
   },
   {
     id: 234,
@@ -1230,7 +1232,7 @@ export default [
   {
     id: 246,
     question: 'He lives in a small room with only one small window.',
-    answer: '他住在一间只有一个小窗户的小里',
+    answer: '他住在一个只有一扇小窗户的小房间里。',
   },
 
   {
@@ -1308,7 +1310,7 @@ export default [
   {
     id: 261,
     question: 'Go down this street until you reach the second traffic lights.',
-    answer: '顺着这条街走,一直走到第二个交通灯处',
+    answer: '沿着这条街一直走到第二个红绿灯处。',
   },
   {
     id: 262,
@@ -1318,27 +1320,27 @@ export default [
   {
     id: 263,
     question: 'Fires may do more damage than the earthquakes.',
-    answer: '火所造成的损失可能比地震还严重',
+    answer: '火所造成的损失可能比地震还严重。',
   },
   {
     id: 264,
     question: 'Fewer high school students are smoking now than a few years ago.',
-    answer: '在中学生吸烟的人数比几年前要少了',
+    answer: '现在中学生吸烟的人数比几年前少了。',
   },
   {
     id: 265,
     question: 'Failure is the mother of success.',
-    answer: '失败乃成功之母',
+    answer: '失败乃成功之母。',
   },
   {
     id: 266,
     question: 'Everyone was in bed except me.',
-    answer: '除了我,所有人都上床睡觉了',
+    answer: '除了我,所有人都上床睡觉了。',
   },
   {
     id: 267,
     question: ' Every student has free access to all the sources in the library.',
-    answer: '每一位学生都可以自由利用图书',
+    answer: '每个学生都可以免费使用图书馆里的所有资源。',
   },
   {
     id: 268,
@@ -1348,7 +1350,7 @@ export default [
   {
     id: 269,
     question: 'Don’t you mind my opening the window?',
-    answer: '你不介意我打开窗应吧?',
+    answer: '你介意我打开窗户吗?',
   },
   {
     id: 270,
@@ -1383,7 +1385,7 @@ export default [
   {
     id: 276,
     question: 'Do you mind my smoking here.',
-    answer: '我在这里吸烟,你介意吗?',
+    answer: '你介意我在这里抽烟吗?',
   },
   {
     id: 277,
@@ -1422,7 +1424,7 @@ export default [
   },
   {
     id: 284,
-    question: 'But competitive swimming is just over one hundred years old',
+    question: 'But competitive swimming is just over one hundred years old.',
     answer: '但是游泳比赛只有一百多年的历史。',
   },
   {
@@ -1437,7 +1439,7 @@ export default [
   },
   {
     id: 287,
-    question: 'Are you willing to give more money to the poor people',
+    question: 'Are you willing to give more money to the poor people?',
     answer: '你愿意给穷人更多的钱吗?',
   },
 
@@ -1448,32 +1450,32 @@ export default [
   },
   {
     id: 289,
-    question: 'Although very important,intelligent is not necessarily the key to success',
+    question: 'Although very important,intelligent is not necessarily the key to success.',
     answer: '虽然聪明很重要，但未必是成功的关键',
   },
   {
     id: 290,
-    question: 'Air pollution is more serious than water pollution',
+    question: 'Air pollution is more serious than water pollution.',
     answer: '空气污染比水污染更严重。',
   },
   {
     id: 291,
-    question: 'About half of the fruit is ripe',
+    question: 'About half of the fruit is ripe.',
     answer: '大约有一半的水果已经成熟了',
   },
   {
     id: 292,
-    question: 'A  teacher should have patience in his work',
+    question: 'A  teacher should have patience in his work.',
     answer: '当老师应当有耐心',
   },
   {
     id: 293,
-    question: 'A good memory is a great help in learning a language',
+    question: 'A good memory is a great help in learning a language.',
     answer: '好的记忆有助于语言的学习。',
   },
   {
     id: 294,
-    question: 'A dog is always well-known as a clever and friendly animal',
+    question: 'A dog is always well-known as a clever and friendly animal.',
     answer: '众所周知，狗一直是聪明而友好的动物',
   },
   {
@@ -1483,7 +1485,9 @@ export default [
   },
   {
     id: 296,
-    question: 'I save the baby and became a hero',
+    question: 'I save the baby and became a hero.',
     answer: '我因救了这个婴儿而成为了英雄。',
   },
 ];
+
+export default [...important, ...unimportant.slice(0, 20)];
