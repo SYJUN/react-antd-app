@@ -296,7 +296,8 @@ const unimportant = [
     id: 59,
     question: 'When were the Olympic Games founded.',
     answer: '奥运会是何时创办的？',
-  }, {
+  },
+  {
     id: 60,
     question: 'When she left school,she went first to Britain.',
     answer: '在她毕业后，她直接去了英国。',
@@ -328,7 +329,7 @@ const unimportant = [
   },
   {
     id: 66,
-    question: 'What time do you go swimming every day.',
+    question: 'What time do you go swimming every day?',
     answer: '你每天何时去游泳?',
   },
   {
@@ -344,7 +345,7 @@ const unimportant = [
   {
     id: 69,
     question: 'We’re running behind schedule by about 15 minutes.',
-    answer: '我们大约误点十五分钟',
+    answer: '我们比预定时间晚了15分钟',
   },
   {
     id: 70,
@@ -358,7 +359,7 @@ const unimportant = [
   },
   {
     id: 72,
-    question: 'We should keep it in mind that our country is a developing one',
+    question: 'We should keep it in mind that our country is a developing one.',
     answer: '我们应牢记在心,我国是一个发展中的国家',
   },
   {
@@ -1490,4 +1491,4 @@ const unimportant = [
   },
 ];
 
-export default [...important, ...unimportant.slice(0, 20)];
+export default [...important, ...unimportant.slice(0, 40)];
