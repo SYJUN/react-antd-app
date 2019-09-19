@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -54,75 +54,65 @@ const RouteStyled = styled(Switch)`
   /* background: #fff; */
 `;
 
-class LayoutPage extends PureComponent {
-  broken = false;
-  
-  state = {
-    trigger: false,
-    collapsed: false,
-    width: 0,
-    collapsedWidth: 0,
-    ismini: 'no',
+function LayoutPage({ routes }) {
+  const [trigger, setTrigger] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [collapsedWidth, setCollapsedWidth] = useState(0);
+  const [ismini, setMini] = useState('no');
+  const [broken, setBroken] = useState(false);
+
+  const handleBreakpoint = bool => {
+    setBroken(bool);
   };
-  
-  handleBreakpoint = broken => {
-    this.broken = broken;
+
+  const toggle = () => {
+    setTrigger(!trigger);
     if (broken) {
-      this.setState({ collapsed: true, trigger: true });
+      setCollapsedWidth(trigger ? 80 : 0);
+      setWidth(trigger ? 80 : 0);
     } else {
-      this.setState({ collapsed: false, trigger: false });
-    }
-    
-    this.setState({
-      collapsedWidth: broken ? 0 : 80,
-      width: broken ? 80 : 200,
-      ismini: broken ? 'yes' : 'no',
-    });
-  };
-
-  toggle = () => {
-    if (this.broken) {
-      this.setState({
-        trigger: !this.state.trigger,
-        collapsedWidth: this.state.trigger ? 80 : 0,
-        width: this.state.trigger ? 80 : 0,
-      });
-    } else {
-      this.setState({
-        trigger: !this.state.trigger,
-        collapsed: !this.state.collapsed,
-      });
+      setCollapsed(!collapsed);
     }
   };
 
-  render() {
-    const { trigger, collapsed, collapsedWidth, width, ismini } = this.state;
+  useEffect(() => {
+    if (broken) {
+      setCollapsed(true);
+      setTrigger(true);
+    } else {
+      setCollapsed(false);
+      setTrigger(false);
+    }
+    setCollapsedWidth(broken ? 0 : 80);
+    setWidth(broken ? 80 : 200);
+    setMini(broken ? 'yes' : 'no');
+  }, [broken]);
 
-    return (
-      <Wrapper ismini={ismini}>
-        <SiderContainer
-          collapsed={collapsed}
-          breakpoint="lg"
-          collapsedWidth={collapsedWidth}
-          width={width}
-          onBreakpoint={this.handleBreakpoint}
-        />
-        <Layout className={trigger ? 'collapsed-layout' : 'no-collapsed-layout'}>
-          <Header>
-            <TriggerIcon
-              type={trigger ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
-          </Header>
-          <Layout.Content style={layoutContentStyle}>
-            <RouteStyled>{this.props.routes}</RouteStyled>
-            <BackTop visibilityHeight={400} />
-          </Layout.Content>
-          <FooterContainer />
-        </Layout>
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper ismini={ismini}>
+      <SiderContainer
+        collapsed={collapsed}
+        breakpoint="lg"
+        collapsedWidth={collapsedWidth}
+        width={width}
+        onBreakpoint={handleBreakpoint}
+      />
+      <Layout className={trigger ? 'collapsed-layout' : 'no-collapsed-layout'}>
+        <Header>
+          <TriggerIcon
+            type={trigger ? 'menu-unfold' : 'menu-fold'}
+            onClick={toggle}
+          />
+        </Header>
+        <Layout.Content style={layoutContentStyle}>
+          <RouteStyled>{routes}</RouteStyled>
+          <BackTop visibilityHeight={400} />
+        </Layout.Content>
+        <FooterContainer />
+      </Layout>
+    </Wrapper>
+  );
 }
 
 LayoutPage.propTypes = {

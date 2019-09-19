@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as _ from 'lodash';
@@ -29,71 +29,56 @@ const ButtonStyle = styled(Button)`
   margin-left: 6px;
 `;
 
-export default class Item extends React.PureComponent {
-  static propTypes = {
-    parent: PropTypes.object.isRequired,
-    data: PropTypes.object.isRequired,
-    questionNum: PropTypes.number.isRequired,
-    enableTranslate: PropTypes.bool,
-    onChoice: PropTypes.func,
-  };
+export default function Item({ parent, data, questionNum, enableTranslate, onChoice }) {
+  const [value, setValue] = useState('');
+  const [isTranslate, setIsTranslate] = useState(false);
+  const [options, setOptions] = useState(data.options ? data.options : []);
 
-  static defaultProps = {
-    enableTranslate: false,
-  };
+  useEffect(() => {
+    setValue(data.selectValue);
+    setOptions([...data.options]);
+  }, [data]);
 
-  state = {
-    value: '',
-    isTranslate: false,
-    options: this.props.data.options ? this.props.data.options : [],
-  };
-
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.data !== this.props.data) {
-      this.setState({
-        value: this.props.data.selectValue,
-        options: [...this.props.data.options],
-      });
-    }
-  }
-
-  onChange = (data) => (e) => {
-    const { onChoice, parent } = this.props;
-    const value = e.target.value;
-    if (value === this.state.value) return;
-    this.setState({ value });
+  const onChange = (data) => (e) => {
+    const val = e.target.value;
+    if (val === value) return;
+    setValue(val);
 
     if (onChoice) {
-      onChoice(_.assign(data, { isRight: data.answer === value, selectValue: value, name: parent.name, title: parent.title }));
+      onChoice(_.assign(data, { isRight: data.answer === val, selectValue: val, name: parent.name, title: parent.title }));
     }
   };
 
-  onTranslate = () => {
-    this.setState({ isTranslate: !this.state.isTranslate });
+  const onTranslate = () => {
+    setIsTranslate(!isTranslate);
   };
 
-  render() {
-    const { data, questionNum, enableTranslate } = this.props;
-
-    return (
-      <Wrapper>
-        <QuestionTitleStyle red={data.selectValue && !data.isRight}>
-          <span style={{ color: data.momentous ? '#f00' : '' }}>{questionNum}</span>. {data.question}
-          {enableTranslate && (<ButtonStyle type="default" size="small" onClick={this.onTranslate}>译</ButtonStyle>)}
-        </QuestionTitleStyle>
-        {enableTranslate && this.state.isTranslate  && (
-          <TranslatePanelStyle>{data.translate}</TranslatePanelStyle>
-        )}
-        <OptionStyle>
-          <Radio.Group onChange={this.onChange(data)} value={this.state.value}>
-            {this.state.options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
-          </Radio.Group>
-        </OptionStyle>
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper>
+      <QuestionTitleStyle red={data.selectValue && !data.isRight}>
+        <span style={{ color: data.momentous ? '#f00' : '' }}>{questionNum}</span>. {data.question}
+        {enableTranslate && (<ButtonStyle type="default" size="small" onClick={onTranslate}>译</ButtonStyle>)}
+      </QuestionTitleStyle>
+      {enableTranslate && isTranslate  && (
+        <TranslatePanelStyle>{data.translate}</TranslatePanelStyle>
+      )}
+      <OptionStyle>
+        <Radio.Group onChange={onChange(data)} value={value}>
+          {options.map((option, idx) => (<Radio key={idx} value={option.value}>{option.value}．{option.name}</Radio>))}
+        </Radio.Group>
+      </OptionStyle>
+    </Wrapper>
+  );
 }
+
+Item.propTypes = {
+  parent: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
+  questionNum: PropTypes.number.isRequired,
+  enableTranslate: PropTypes.bool,
+  onChoice: PropTypes.func,
+};
+
+Item.defaultProps = {
+  enableTranslate: false,
+};

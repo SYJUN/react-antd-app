@@ -36,41 +36,41 @@ const Details = styled.div`
   text-overflow: ellipsis;
 `;
 
-class Activities extends React.PureComponent {
-  render() {
-    const data = [
-      { id: 1, title: '创建项目1', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'finish' },
-      { id: 2, title: '创建项目2', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'unfinished' },
-      { id: 3, title: '创建项目3', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'underway' },
-      { id: 4, title: '创建项目4', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
-      { id: 5, title: '创建项目5', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
-    ];
-    const icons = {
-      finish: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,         // 完成
-      unfinished: <Icon type="close-circle" theme="twoTone" twoToneColor="#eb2f96" />,     // 未完成
-      underway: <Icon type="clock-circle" theme="twoTone" twoToneColor="#0095f9" />,       // 进行中
-      schedule: '',   // 计划中
-    };
+function Activities() {
+  const data = [
+    { id: 1, title: '创建项目1', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'finish' },
+    { id: 2, title: '创建项目2', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'unfinished' },
+    { id: 3, title: '创建项目3', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'underway' },
+    { id: 4, title: '创建项目4', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
+    { id: 5, title: '创建项目5', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
+  ];
+  const icons = {
+    finish: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,         // 完成
+    unfinished: <Icon type="close-circle" theme="twoTone" twoToneColor="#eb2f96" />,     // 未完成
+    underway: <Icon type="clock-circle" theme="twoTone" twoToneColor="#0095f9" />,       // 进行中
+    schedule: '',   // 计划中
+  };
 
-    return (
-      <Card title="任务列表">
-        <Timeline>
-          {data.map((item, idx) => {
-            return (
-              <Timeline.Item key={idx} dot={icons[item.status]}>
-                <Item>
-                  <Title>{item.title}</Title>
-                  <UserInfo><span>{item.create_at}</span><span>{item.auth}</span></UserInfo>
-                  <Details>{item.content}</Details>
-                </Item>
-              </Timeline.Item>
-            );
-          })}
-        </Timeline>
-      </Card>
-    );
-  }
+  return (
+    <Card title="任务列表">
+      <Timeline>
+        {data.map((item, idx) => {
+          return (
+            <Timeline.Item key={idx} dot={icons[item.status]}>
+              <Item>
+                <Title>{item.title}</Title>
+                <UserInfo><span>{item.create_at}</span><span>{item.auth}</span></UserInfo>
+                <Details>{item.content}</Details>
+              </Item>
+            </Timeline.Item>
+          );
+        })}
+      </Timeline>
+    </Card>
+  );
 }
+
+Activities.propTypes = {};
 
 function ErrorWrapper(props) {
   return (<ErrorBoundary><Activities {...props} /></ErrorBoundary>);

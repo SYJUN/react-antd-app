@@ -16,6 +16,6 @@ Footer.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]),
-}
+};
 
 export default Footer;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as _ from 'lodash';
@@ -29,57 +29,50 @@ const StyledContent = styled.div`
   `};
 `;
 
-class CardCarousel extends React.PureComponent {
-  // 切割数组，用于每页显示的数量
-  static splitColl(coll, num) {
-    let collLen = coll.length;
-    let result = [];
-    for (let i = 0; i < collLen; i += num) {
-      result.push(coll.slice(i, i + num));
-    }
-    return result;
+const splitColl = (coll, num) => {
+  let collLen = coll.length;
+  let result = [];
+  for (let i = 0; i < collLen; i += num) {
+    result.push(coll.slice(i, i + num));
   }
+  return result;
+};
 
-  state = {
-    activeIdx: 0,
+function CardCarousel({ children, cardTitle, bordered, hoverable, pageSize, trigger, height, reconstruct }) {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const handleTrigger = (index) => {
+    if (activeIdx === index) return;
+    setActiveIdx(index);
   };
 
-  handleTrigger = (index) => {
-    if (this.state.activeIdx === index) return;
-    this.setState({ activeIdx: index });
-  };
-
-  render() {
-    const { children, cardTitle, bordered, hoverable, pageSize, trigger, height, reconstruct } = this.props;
-    // 如果 children 不是 array 类型，或者数量小于等于1时，直接渲染
-    if (!_.isArray(children) || children.length <= 1) {
-      return (
-        <Card title={cardTitle} bordered={bordered} hoverable={hoverable}>
-          <Content height={height}>{children}</Content>
-        </Card>
-      );
-    }
-    const { activeIdx } = this.state;
-    const splitData = CardCarousel.splitColl(children, pageSize);
-    const total = Math.ceil(children.length / pageSize);
-    const extra = total > 1 ? (<Group groups={splitData} activeIdx={activeIdx} trigger={trigger} onTrigger={this.handleTrigger} />) : '';
-
+  // 如果 children 不是 array 类型，或者数量小于等于1时，直接渲染
+  if (!_.isArray(children) || children.length <= 1) {
     return (
-      <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
-        <Content height={height}>
-          {reconstruct ? splitData[activeIdx].map(o => o) : (
-            splitData.map((item, idx) => {
-              return (
-                <StyledContent key={idx} active={activeIdx === idx}>
-                  {activeIdx === idx && item.map(o => o)}
-                </StyledContent>
-              );
-            })
-          )}
-        </Content>
+      <Card title={cardTitle} bordered={bordered} hoverable={hoverable}>
+        <Content height={height}>{children}</Content>
       </Card>
     );
   }
+  const splitData = splitColl(children, pageSize);
+  const total = Math.ceil(children.length / pageSize);
+  const extra = total > 1 ? (<Group groups={splitData} activeIdx={activeIdx} trigger={trigger} onTrigger={handleTrigger} />) : '';
+
+  return (
+    <Card title={cardTitle} bordered={bordered} hoverable={hoverable} extra={extra}>
+      <Content height={height}>
+        {reconstruct ? splitData[activeIdx].map(o => o) : (
+          splitData.map((item, idx) => {
+            return (
+              <StyledContent key={idx} active={activeIdx === idx}>
+                {activeIdx === idx && item.map(o => o)}
+              </StyledContent>
+            );
+          })
+        )}
+      </Content>
+    </Card>
+  );
 }
 
 CardCarousel.propTypes = {

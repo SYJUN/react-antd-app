@@ -15,7 +15,7 @@
   },
   "rules": {
     "react/prefer-stateless-function": "error",
-    "react/jsx-no-bind": "error",
+//    "react/jsx-no-bind": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-pascal-case": "error",
     "react/jsx-closing-bracket-location": "error",

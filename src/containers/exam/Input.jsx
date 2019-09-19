@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -8,41 +8,29 @@ const Wrapper = styled.div`
 
 `;
 
-export default class ExamInput extends React.PureComponent {
-  static propTypes = {
-    isRefresh: PropTypes.bool.isRequired,
-    onChange: PropTypes.func.isRequired,
-  };
+export default function ExamInput({ isRefresh, onChange }) {
+  const [value, setValue] = useState('');
 
-  static defaultProps = {};
+  useEffect(() => {
+    setValue('');
+  }, [isRefresh]);
 
-  state = {
-    value: '',
-  };
-
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.isRefresh !== this.props.isRefresh) {
-      this.setState({ value: '' });
-    }
-  }
-
-  onChange = (e) => {
-    const value = e.target.value;
-    this.setState({ value });
-    if (value.trim()) {
-      this.props.onChange(value);
+  const handleChange = (e) => {
+    const textVal = e.target.value;
+    setValue(textVal);
+    if (textVal.trim()) {
+      onChange(textVal);
     }
   };
 
-  render() {
-    return (
-      <Wrapper>
-        <Input type="text" value={this.state.value} onChange={this.onChange} />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper>
+      <Input type="text" value={value} onChange={handleChange} />
+    </Wrapper>
+  );
 }
+
+ExamInput.propTypes = {
+  isRefresh: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
