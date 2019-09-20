@@ -59,7 +59,7 @@ function LayoutPage({ routes }) {
   const [collapsed, setCollapsed] = useState(false);
   const [width, setWidth] = useState(0);
   const [collapsedWidth, setCollapsedWidth] = useState(0);
-  const [ismini, setMini] = useState('no');
+  const [isMini, setIsMini] = useState('no');
   const [broken, setBroken] = useState(false);
 
   const handleBreakpoint = bool => {
@@ -86,11 +86,11 @@ function LayoutPage({ routes }) {
     }
     setCollapsedWidth(broken ? 0 : 80);
     setWidth(broken ? 80 : 200);
-    setMini(broken ? 'yes' : 'no');
+    setIsMini(broken ? 'yes' : 'no');
   }, [broken]);
 
   return (
-    <Wrapper ismini={ismini}>
+    <Wrapper ismini={isMini}>
       <SiderContainer
         collapsed={collapsed}
         breakpoint="lg"
