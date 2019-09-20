@@ -4,7 +4,8 @@
       "modules": false,
       "targets": {
         "browsers": ["> 5% in CN", "last 2 versions", "not dead", "not ie <= 9"]
-      }
+      },
+      "useBuiltIns": "usage"
     }],
     "@babel/preset-react"
   ],
