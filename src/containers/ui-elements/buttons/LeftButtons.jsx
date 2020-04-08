@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Row, Col, Card, Button, Icon, Dropdown, Menu } from 'antd';
+import { DownOutlined, LeftOutlined, RightOutlined, CloudOutlined, CloudDownloadOutlined } from '@ant-design/icons';
+
+import { Row, Col, Card, Button, Dropdown, Menu } from 'antd';
 import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 import ButtonSize from './ButtonSize';
@@ -77,15 +79,15 @@ function LeftButtons() {
             <h4>With Icon</h4>
             <ButtonGroup>
               <StyledButton type="primary">
-                <Icon type="left" />Go back
+                <LeftOutlined />Go back
               </StyledButton>
               <StyledButton type="primary">
-                Go forward<Icon type="right" />
+                Go forward<RightOutlined />
               </StyledButton>
             </ButtonGroup>
             <ButtonGroup>
-              <StyledButton type="primary" icon="cloud" />
-              <StyledButton type="primary" icon="cloud-download" />
+              <StyledButton type="primary" icon={<CloudOutlined />} />
+              <StyledButton type="primary" icon={<CloudDownloadOutlined />} />
             </ButtonGroup>
           </Card>
         </Item>
@@ -98,7 +100,7 @@ function LeftButtons() {
             <StyledButton>secondary</StyledButton>
             <Dropdown overlay={menu}>
               <StyledButton>
-                Actions <Icon type="down" />
+                Actions <DownOutlined />
               </StyledButton>
             </Dropdown>
           </Card>

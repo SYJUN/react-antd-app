@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Row, Col, Card, Button } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 const Item = styled.div`
@@ -18,16 +19,16 @@ function RightButtons() {
       <Col sm={24}>
         <Item>
           <Card title="图标按钮">
-            <StyledButton type="primary" shape="circle" icon="search" />
-            <StyledButton type="primary" icon="search">Search</StyledButton>
-            <StyledButton shape="circle" icon="search" />
-            <StyledButton icon="search">Search</StyledButton>
+            <StyledButton type="primary" shape="circle" icon={<SearchOutlined />} />
+            <StyledButton type="primary" icon={<SearchOutlined />}>Search</StyledButton>
+            <StyledButton shape="circle" icon={<SearchOutlined />} />
+            <StyledButton icon={<SearchOutlined />}>Search</StyledButton>
             <br />
         
-            <StyledButton shape="circle" icon="search" />
-            <StyledButton icon="search">Search</StyledButton>
-            <StyledButton type="dashed" shape="circle" icon="search" />
-            <StyledButton type="dashed" icon="search">Search</StyledButton>
+            <StyledButton shape="circle" icon={<SearchOutlined />} />
+            <StyledButton icon={<SearchOutlined />}>Search</StyledButton>
+            <StyledButton type="dashed" shape="circle" icon={<SearchOutlined />} />
+            <StyledButton type="dashed" icon={<SearchOutlined />}>Search</StyledButton>
           </Card>
         </Item>
       </Col>

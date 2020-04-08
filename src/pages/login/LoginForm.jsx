@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { loginAppAction } from '../../actions/login';
 
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Input, Button, Checkbox, Form } from 'antd';
 
 const Wrapper = styled.div`
   width: 350px;
@@ -25,94 +26,87 @@ const Wrapper = styled.div`
   }
 `;
 
-@Form.create({})
-@connect(state => state.loginApp, { loginAppAction })
-class LoginForm extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-  
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { form, onSubmit } = this.props;
-    
-    form.validateFields((err, values) => {
-      if (!err) {
-        if (values.userName !== 'test') {
-          this.props.form.setFields({
-            userName: {
-              value: values.userName,
-              errors: [new Error('用户不存在')],
-            },
-          });
-          return;
-        }
-  
-        if (values.password !== '1234') {
-          this.props.form.setFields({
-            password: {
-              value: values.password,
-              errors: [new Error('密码不正确')],
-            },
-          });
-          return;
-        }
-        
-        if (values.userName === 'test' && values.password === '1234') {
-          this.props.loginAppAction({ userName: 'test', password: '1234' });
-          onSubmit();
-        }
+const initialValues = {
+  remember: true,
+  userName: 'test',
+  password: '1234',
+};
+
+const LoginForm = ({ onSubmit }) => {
+  const [form] = Form.useForm();
+  const dispatch = useDispatch();
+  const { data } = useSelector(state => state.loginApp, shallowEqual);
+
+  const onFinish = () => {
+    form.validateFields(['userName', 'password']).then(values => {
+      if (values.userName !== 'test') {
+        form.setFields([
+          {
+            name: 'userName',
+            value: values.userName,
+            errors: ['用户名不存在'],
+          },
+        ]);
+        return;
+      }
+
+      if (values.password !== '1234') {
+        form.setFields([
+          {
+            name: 'password',
+            value: values.password,
+            errors: ['密码不正确'],
+          },
+        ]);
+        return;
+      }
+
+      if (values.userName === 'test' && values.password === '1234') {
+        dispatch(loginAppAction({ userName: 'test', password: '1234' }));
+        onSubmit();
       }
     });
   };
-  
-  render() {
-    const {
-      form: { getFieldDecorator },
-    } = this.props;
 
-    return (
-      <Wrapper>
-        <Form onSubmit={this.handleSubmit} className="login-form">
-          <Form.Item>
-            {getFieldDecorator('userName', {
-              rules: [{ required: true, message: '请输入用户名' }],
-              initialValue: 'test',
-            })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
-            )}
+  return (
+    <Wrapper>
+      <Form
+        form={form}
+        onFinish={onFinish}
+        className="login-form"
+        initialValues={initialValues}
+      >
+        <Form.Item
+          name="userName"
+          rules={[{ required: true, message: '请输入用户名' }]}
+        >
+          <Input prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
+        </Form.Item>
+
+        <Form.Item name="password" rules={[{ required: true, message: '请输入密码' }]}>
+          <Input prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
+        </Form.Item>
+
+        <Form.Item>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Remember me</Checkbox>
           </Form.Item>
-          
-          <Form.Item>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入密码' }],
-              initialValue: '1234',
-            })(
-              <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
-            )}
-          </Form.Item>
-          
-          <Form.Item>
-            {getFieldDecorator('remember', {
-              valuePropName: 'checked',
-              initialValue: true,
-            })(
-              <Checkbox>Remember me</Checkbox>
-            )}
-            <a className="login-form-forgot" href="">忘记密码?</a>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              登录
-            </Button>
-            Or <a href="">现在注册</a>
-          </Form.Item>
-        </Form>
-      </Wrapper>
-    );
-  }
-}
+
+          <a className="login-form-forgot" href="">忘记密码?</a>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className="login-form-button">
+            登录
+          </Button>
+          Or <a href="">现在注册</a>
+        </Form.Item>
+      </Form>
+    </Wrapper>
+  );
+};
 
 LoginForm.propTypes = {
-  form: PropTypes.object,
   loginApp: PropTypes.object,
   loginAppAction: PropTypes.func,
   onSubmit: PropTypes.func,

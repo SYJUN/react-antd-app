@@ -2,7 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { decimalize } from '../../utils/number';
-import { Row, Col, Card, Icon } from 'antd';
+import { FlagOutlined, SmileOutlined, DollarOutlined, TeamOutlined } from '@ant-design/icons';
+import { Row, Col, Card } from 'antd';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 
 const List = styled.div`
@@ -47,6 +48,19 @@ const CardExtra = styled.span`
   color: #fff;
 `;
 
+function Icon({ iconName }) {
+  switch (iconName) {
+    case 'flag':
+      return <FlagOutlined />;
+    case 'smile':
+      return <SmileOutlined />;
+    case 'dollar':
+      return <DollarOutlined />;
+    case 'team':
+      return <TeamOutlined />;
+  }
+}
+
 function Overview() {
   const data = [
     [
@@ -66,31 +80,29 @@ function Overview() {
     active_user: 'team',
   };
 
-  return (
-    data.map((item, idx) => {
-      return (
-        <List key={idx}>
-          <Row gutter={{ xs: 8, sm: 16 }}>
-            {item.map((o, k) => {
-              return (
-                <Col xs={24} sm={12} key={k}>
-                  <Card title={o.title} extra={<CardExtra bgColor={o.extra.bg_color}>{o.extra.label}</CardExtra>}>
-                    <Item>
-                      <div className="number">{decimalize(o.value, 0)}</div>
-                      <div className="footer">
-                        <span>{o.total_label}</span>
-                        <span>{o.total_value} <Icon type={iconNames[o.name]} /></span>
-                      </div>
-                    </Item>
-                  </Card>
-                </Col>
-              );
-            })}
-          </Row>
-        </List>
-      );
-    })
-  );
+  return data.map((item, idx) => {
+    return (
+      <List key={idx}>
+        <Row gutter={{ xs: 8, sm: 16 }}>
+          {item.map((o, k) => {
+            return (
+              <Col xs={24} sm={12} key={k}>
+                <Card title={o.title} extra={<CardExtra bgColor={o.extra.bg_color}>{o.extra.label}</CardExtra>}>
+                  <Item>
+                    <div className="number">{decimalize(o.value, 0)}</div>
+                    <div className="footer">
+                      <span>{o.total_label}</span>
+                      <span>{o.total_value} <Icon iconName={iconNames[o.name]} /></span>
+                    </div>
+                  </Item>
+                </Card>
+              </Col>
+            );
+          })}
+        </Row>
+      </List>
+    );
+  });
 }
 
 function ErrorWrapper(props) {

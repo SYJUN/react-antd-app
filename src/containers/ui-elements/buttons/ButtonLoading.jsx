@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Card, Button } from 'antd';
+import { PoweroffOutlined } from '@ant-design/icons';
 import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 const StyledButton = styled(Button)`
@@ -33,7 +34,7 @@ function ButtonLoading() {
       <StyledButton type="primary" loading={loading} onClick={enterLoading}>
         Click me!
       </StyledButton>
-      <StyledButton type="primary" icon="poweroff" loading={iconLoading} onClick={enterIconLoading}>
+      <StyledButton type="primary" icon={<PoweroffOutlined />} loading={iconLoading} onClick={enterIconLoading}>
         Click me!
       </StyledButton>
       <br />

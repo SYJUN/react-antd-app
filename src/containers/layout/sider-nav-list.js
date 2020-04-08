@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 
-import { Icon } from 'antd';
+import { DeploymentUnitOutlined, HomeOutlined, SolutionOutlined } from '@ant-design/icons';
 import CircleIcon from '../../../assets/svgs/circle.svg';
 
 const customIconStyle = {
@@ -15,12 +15,12 @@ export default [
   {
     label: "首页",
     path: "/home",
-    icon: <Icon type="home" />,
+    icon: <HomeOutlined />,
   },
   {
     label: "UI元素",
     path: '/ui-elements',
-    icon: <Icon type="deployment-unit" />,
+    icon: <DeploymentUnitOutlined />,
     children: [
       {
         label: "按钮",
@@ -37,7 +37,7 @@ export default [
   {
     label: '统考',
     path: '/exam',
-    icon: <Icon type="solution" />,
+    icon: <SolutionOutlined />,
     children: [
       {
         label: '计算机应用基础',

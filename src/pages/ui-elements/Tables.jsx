@@ -8,7 +8,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a href="javascript:;">{text}</a>,
+    render: text => <a>{text}</a>,
   },
   {
     title: 'Age',
@@ -45,9 +45,9 @@ const columns = [
     key: 'action',
     render: (text, record) => (
       <span>
-        <a href="javascript:;">Invite {record.name}</a>
+        <a>Invite {record.name}</a>
         <Divider type="vertical" />
-        <a href="javascript:;">Delete</a>
+        <a>Delete</a>
       </span>
     ),
   },

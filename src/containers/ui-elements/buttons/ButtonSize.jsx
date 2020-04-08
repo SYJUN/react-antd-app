@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Card, Button, Radio, Icon } from 'antd';
+import { LeftOutlined, RightOutlined, DownloadOutlined } from '@ant-design/icons';
+
+import { Card, Button, Radio } from 'antd';
 import ErrorBoundary from '../../../components/feedback/ErrorBoundary';
 
 const StyledButton = styled(Button)`
@@ -30,17 +32,17 @@ function ButtonSize() {
       <StyledButton type="danger" size={size}>Danger</StyledButton>
       <br />
 
-      <StyledButton type="primary" shape="circle" icon="download" size={size} />
-      <StyledButton type="primary" shape="round" icon="download" size={size}>Download</StyledButton>
-      <StyledButton type="primary" icon="download" size={size}>Download</StyledButton>
+      <StyledButton type="primary" shape="circle" icon={<DownloadOutlined />} size={size} />
+      <StyledButton type="primary" shape="round" icon={<DownloadOutlined />} size={size}>Download</StyledButton>
+      <StyledButton type="primary" icon={<DownloadOutlined />} size={size}>Download</StyledButton>
       <br />
 
       <Button.Group size={size}>
         <StyledButton type="primary">
-          <Icon type="left" />Backward
+          <LeftOutlined />Backward
         </StyledButton>
         <StyledButton type="primary">
-          Forward<Icon type="right" />
+          Forward<RightOutlined />
         </StyledButton>
       </Button.Group>
     </Card>

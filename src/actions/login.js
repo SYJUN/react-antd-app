@@ -1,4 +1,4 @@
-import { LOGIN_APP, GET_LOGIN_APP_STATUS } from '../action-types/login';
+import { LOGIN_APP, LOGOUT_APP, GET_LOGIN_APP_STATUS } from '../action-types/login';
 import reducerRegistry from '@core/store/reducer-registry';
 import loginReducer from '../reducers/login';
 
@@ -13,6 +13,16 @@ export function loginAppAction(data) {
   return {
     type: LOGIN_APP,
     data,
+  };
+}
+
+/**
+ * 登出
+ */
+export function logoutAppAction() {
+  return {
+    type: LOGOUT_APP,
+    data: null,
   };
 }
 

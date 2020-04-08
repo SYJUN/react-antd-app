@@ -2,7 +2,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Card, Timeline, Icon } from 'antd';
+import { CheckCircleTwoTone, ClockCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
+
+import { Card, Timeline } from 'antd';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 
 const Item = styled.div`
@@ -45,9 +47,9 @@ function Activities() {
     { id: 5, title: '创建项目5', content: '使用 react + webapck 搭建前端项目', create_at: '2019-01-23', author: 'Shinn', status: 'schedule' },
   ];
   const icons = {
-    finish: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,         // 完成
-    unfinished: <Icon type="close-circle" theme="twoTone" twoToneColor="#eb2f96" />,     // 未完成
-    underway: <Icon type="clock-circle" theme="twoTone" twoToneColor="#0095f9" />,       // 进行中
+    finish: <CheckCircleTwoTone twoToneColor="#52c41a" />,         // 完成
+    unfinished: <CloseCircleTwoTone twoToneColor="#eb2f96" />,     // 未完成
+    underway: <ClockCircleTwoTone twoToneColor="#0095f9" />,       // 进行中
     schedule: '',   // 计划中
   };
 

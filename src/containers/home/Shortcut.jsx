@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Icon } from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
 import ErrorBoundary from '../../components/feedback/ErrorBoundary';
 import CardCarousel from '../../components/card-carousel';
 
@@ -53,7 +53,7 @@ function Shortcut(props) {
         return (
           <CardItem key={idx}>
             <div className="media-heading">
-              <Icon type="home" />
+              <HomeOutlined />
             </div>
             <div className="media-body">{item.label}</div>
           </CardItem>
